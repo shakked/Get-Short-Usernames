@@ -2,6 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Get Short Usernames/ZSSNetworkTableViewCell.h">
+   </FileRef>
+   <FileRef
+      location = "group:Get Short Usernames/ZSSNetworkTableViewCell.m">
+   </FileRef>
+   <FileRef
+      location = "group:Get Short Usernames/ZSSNetworkTableViewCell.xib">
+   </FileRef>
+   <FileRef
+      location = "group:Get Short Usernames/ZSSUsernameTableViewCell.h">
+   </FileRef>
+   <FileRef
+      location = "group:Get Short Usernames/ZSSUsernameTableViewCell.m">
+   </FileRef>
+   <FileRef
+      location = "group:Get Short Usernames/ZSSUsernameTableViewCell.xib">
+   </FileRef>
+   <FileRef
       location = "group:Get Short Usernames.xcodeproj">
    </FileRef>
    <FileRef
