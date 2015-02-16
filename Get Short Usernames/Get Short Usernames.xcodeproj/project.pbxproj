@@ -20,14 +20,14 @@
 		4A6EAA071A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA031A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib */; };
 		4A6EAA0C1A92A6C2007ADFF8 /* ZSSCloudQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0B1A92A6C2007ADFF8 /* ZSSCloudQuerier.m */; };
 		4A6EAA0D1A92A6C2007ADFF8 /* ZSSCloudQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0B1A92A6C2007ADFF8 /* ZSSCloudQuerier.m */; };
-		4A6EAA121A92A959007ADFF8 /* github-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0E1A92A959007ADFF8 /* github-logo.png */; };
-		4A6EAA131A92A959007ADFF8 /* github-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0E1A92A959007ADFF8 /* github-logo.png */; };
-		4A6EAA141A92A959007ADFF8 /* instagram-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0F1A92A959007ADFF8 /* instagram-logo.jpg */; };
-		4A6EAA151A92A959007ADFF8 /* instagram-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0F1A92A959007ADFF8 /* instagram-logo.jpg */; };
-		4A6EAA161A92A959007ADFF8 /* pinterest-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA101A92A959007ADFF8 /* pinterest-logo.jpg */; };
-		4A6EAA171A92A959007ADFF8 /* pinterest-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA101A92A959007ADFF8 /* pinterest-logo.jpg */; };
-		4A6EAA181A92A959007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA111A92A959007ADFF8 /* twitter-logo.png */; };
-		4A6EAA191A92A959007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA111A92A959007ADFF8 /* twitter-logo.png */; };
+		4A6EAA1E1A92B0EC007ADFF8 /* github-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1A1A92B0EC007ADFF8 /* github-logo.png */; };
+		4A6EAA1F1A92B0EC007ADFF8 /* github-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1A1A92B0EC007ADFF8 /* github-logo.png */; };
+		4A6EAA201A92B0EC007ADFF8 /* instagram-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */; };
+		4A6EAA211A92B0EC007ADFF8 /* instagram-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */; };
+		4A6EAA221A92B0EC007ADFF8 /* pinterest-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */; };
+		4A6EAA231A92B0EC007ADFF8 /* pinterest-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */; };
+		4A6EAA241A92B0EC007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */; };
+		4A6EAA251A92B0EC007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */; };
 		61961BB71F8F397F661DD1DB /* libPods-Get Short Usernames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEE34D6B4235E2B1ABADD0 /* libPods-Get Short Usernames.a */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +65,10 @@
 		4A6EAA031A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSUsernameTableViewCell.xib; sourceTree = "<group>"; };
 		4A6EAA0A1A92A6C2007ADFF8 /* ZSSCloudQuerier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSCloudQuerier.h; sourceTree = "<group>"; };
 		4A6EAA0B1A92A6C2007ADFF8 /* ZSSCloudQuerier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSCloudQuerier.m; sourceTree = "<group>"; };
-		4A6EAA0E1A92A959007ADFF8 /* github-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "github-logo.png"; path = "images/github-logo.png"; sourceTree = "<group>"; };
-		4A6EAA0F1A92A959007ADFF8 /* instagram-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "instagram-logo.jpg"; path = "images/instagram-logo.jpg"; sourceTree = "<group>"; };
-		4A6EAA101A92A959007ADFF8 /* pinterest-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pinterest-logo.jpg"; path = "images/pinterest-logo.jpg"; sourceTree = "<group>"; };
-		4A6EAA111A92A959007ADFF8 /* twitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-logo.png"; path = "images/twitter-logo.png"; sourceTree = "<group>"; };
+		4A6EAA1A1A92B0EC007ADFF8 /* github-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github-logo.png"; sourceTree = "<group>"; };
+		4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram-logo.png"; sourceTree = "<group>"; };
+		4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinterest-logo.png"; sourceTree = "<group>"; };
+		4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-logo.png"; sourceTree = "<group>"; };
 		85422DE9F116E552BA43C7C9 /* Pods-Get Short Usernames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short Usernames.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short Usernames/Pods-Get Short Usernames.release.xcconfig"; sourceTree = "<group>"; };
 		FFA06A8E52BBB22393803699 /* Pods-Get Short Usernames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short Usernames.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short Usernames/Pods-Get Short Usernames.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,10 +103,6 @@
 		4A0378CC1A92A412000D5B7C = {
 			isa = PBXGroup;
 			children = (
-				4A6EAA0E1A92A959007ADFF8 /* github-logo.png */,
-				4A6EAA0F1A92A959007ADFF8 /* instagram-logo.jpg */,
-				4A6EAA101A92A959007ADFF8 /* pinterest-logo.jpg */,
-				4A6EAA111A92A959007ADFF8 /* twitter-logo.png */,
 				4A0378D71A92A412000D5B7C /* Get Short Usernames */,
 				4A0378F11A92A413000D5B7C /* Get Short UsernamesTests */,
 				4A0378D61A92A412000D5B7C /* Products */,
@@ -127,6 +123,10 @@
 		4A0378D71A92A412000D5B7C /* Get Short Usernames */ = {
 			isa = PBXGroup;
 			children = (
+				4A6EAA1A1A92B0EC007ADFF8 /* github-logo.png */,
+				4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */,
+				4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */,
+				4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */,
 				4A6EAA081A92A6A9007ADFF8 /* Cells */,
 				4A0378DC1A92A412000D5B7C /* AppDelegate.h */,
 				4A0378DD1A92A412000D5B7C /* AppDelegate.m */,
@@ -282,11 +282,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A6EAA071A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib in Resources */,
-				4A6EAA121A92A959007ADFF8 /* github-logo.png in Resources */,
+				4A6EAA201A92B0EC007ADFF8 /* instagram-logo.png in Resources */,
+				4A6EAA1E1A92B0EC007ADFF8 /* github-logo.png in Resources */,
 				4A0378E91A92A412000D5B7C /* LaunchScreen.xib in Resources */,
-				4A6EAA141A92A959007ADFF8 /* instagram-logo.jpg in Resources */,
-				4A6EAA181A92A959007ADFF8 /* twitter-logo.png in Resources */,
-				4A6EAA161A92A959007ADFF8 /* pinterest-logo.jpg in Resources */,
+				4A6EAA241A92B0EC007ADFF8 /* twitter-logo.png in Resources */,
+				4A6EAA221A92B0EC007ADFF8 /* pinterest-logo.png in Resources */,
 				4A0378E61A92A412000D5B7C /* Images.xcassets in Resources */,
 				4A6EAA051A92A6A4007ADFF8 /* ZSSNetworkTableViewCell.xib in Resources */,
 			);
@@ -296,10 +296,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A6EAA191A92A959007ADFF8 /* twitter-logo.png in Resources */,
-				4A6EAA131A92A959007ADFF8 /* github-logo.png in Resources */,
-				4A6EAA171A92A959007ADFF8 /* pinterest-logo.jpg in Resources */,
-				4A6EAA151A92A959007ADFF8 /* instagram-logo.jpg in Resources */,
+				4A6EAA251A92B0EC007ADFF8 /* twitter-logo.png in Resources */,
+				4A6EAA1F1A92B0EC007ADFF8 /* github-logo.png in Resources */,
+				4A6EAA211A92B0EC007ADFF8 /* instagram-logo.png in Resources */,
+				4A6EAA231A92B0EC007ADFF8 /* pinterest-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

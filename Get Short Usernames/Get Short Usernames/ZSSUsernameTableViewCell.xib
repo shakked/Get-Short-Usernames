@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinterest-logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9ew-e8-cgQ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="9ew-e8-cgQ">
                         <rect key="frame" x="8" y="8" width="334" height="69"/>
                     </imageView>
                 </subviews>
@@ -30,6 +30,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="pinterest-logo.jpg" width="1200" height="901"/>
+        <image name="twitter-logo.png" width="1002" height="207"/>
     </resources>
 </document>

@@ -10,4 +10,6 @@
 
 @interface ZSSNetworkTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *networkLogoImageView;
+
 @end

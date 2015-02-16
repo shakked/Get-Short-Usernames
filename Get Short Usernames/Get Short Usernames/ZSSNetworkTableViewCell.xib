@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ZSSNetworkTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="ZSSNetworkTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="86"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yij-9I-NoB">
+                        <rect key="frame" x="8" y="8" width="334" height="69"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="334" id="2VT-OO-cIq"/>
+                            <constraint firstAttribute="height" constant="69" id="Izq-1B-p6U"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="yij-9I-NoB" secondAttribute="centerX" id="Nrj-R8-Bbw"/>
+                    <constraint firstAttribute="centerY" secondItem="yij-9I-NoB" secondAttribute="centerY" id="ZY8-Nr-KK2"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="networkLogoImageView" destination="yij-9I-NoB" id="WrV-oJ-cmY"/>
+            </connections>
+            <point key="canvasLocation" x="233.5" y="377.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="twitter-logo.png" width="1002" height="207"/>
+    </resources>
 </document>
