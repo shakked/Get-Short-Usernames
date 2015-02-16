@@ -5,11 +5,11 @@
 //  Created by Zachary Shakked on 2/16/15.
 //  Copyright (c) 2015 Shkeek Inc. All rights reserved.
 //
-
+#import "UIColor+Flat.h"
 #import "ZSSNetworkTableViewController.h"
 #import "ZSSNetworkTableViewCell.h"
 
-static NSString *MESSAGE_CELL_CLASS = @"ZSSSNetworkTableViewCell";
+static NSString *MESSAGE_CELL_CLASS = @"ZSSNetworkTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
 
 @interface ZSSNetworkTableViewController ()
@@ -32,7 +32,10 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (void)configureNavBar {
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor belizeHole];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
 }
 
 - (void)configurePullToRefresh {
@@ -68,17 +71,22 @@ static NSString *CELL_IDENTIFIER = @"cell";
             break;
         case 1:
             cell.networkLogoImageView.image = [UIImage imageNamed:@"github-logo.png"];
+            break;
         case 2:
             cell.networkLogoImageView.image = [UIImage imageNamed:@"pinterest-logo.png"];
+            break;
         case 3:
             cell.networkLogoImageView.image = [UIImage imageNamed:@"twitter-logo.png"];
+            break;
         default:
             break;
     }
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 86.0;
 }
 
 

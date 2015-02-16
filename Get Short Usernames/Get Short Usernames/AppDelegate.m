@@ -19,8 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
     ZSSNetworkTableViewController *ntvc = [[ZSSNetworkTableViewController alloc] init];
-    self.window.rootViewController = ntvc;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ntvc];
+    
+    self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
     
