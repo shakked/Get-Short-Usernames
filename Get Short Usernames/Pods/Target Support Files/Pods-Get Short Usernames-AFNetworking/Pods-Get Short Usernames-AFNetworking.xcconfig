@@ -1,0 +1,1 @@
+PODS_GET_SHORT_USERNAMES_AFNETWORKING_OTHER_LDFLAGS = -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
