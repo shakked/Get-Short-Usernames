@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,12 +15,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ew-e8-cgQ">
-                        <rect key="frame" x="23" y="17" width="305" height="51"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinterest-logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9ew-e8-cgQ">
+                        <rect key="frame" x="8" y="8" width="334" height="69"/>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="9ew-e8-cgQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="MaK-V4-3j2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9ew-e8-cgQ" secondAttribute="trailing" id="WGy-b4-aXd"/>
+                    <constraint firstItem="9ew-e8-cgQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ZAQ-2r-c5Y"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9ew-e8-cgQ" secondAttribute="bottom" id="jfx-ud-oGQ"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="423" y="375"/>
+            <point key="canvasLocation" x="423" y="373"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pinterest-logo.jpg" width="1200" height="901"/>
+    </resources>
 </document>
