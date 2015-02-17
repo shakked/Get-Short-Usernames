@@ -8,6 +8,7 @@
 #import "UIColor+Flat.h"
 #import "ZSSNetworkTableViewController.h"
 #import "ZSSNetworkTableViewCell.h"
+#import "ZSSUsernameTableViewController.h"
 
 static NSString *MESSAGE_CELL_CLASS = @"ZSSNetworkTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
@@ -26,20 +27,22 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (void)configureViews {
     [self configureNavBar];
-    [self configurePullToRefresh];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:MESSAGE_CELL_CLASS bundle:nil] forCellReuseIdentifier:CELL_IDENTIFIER];
+    [self configureTableView];
 }
 
 - (void)configureNavBar {
-    self.navigationController.navigationBar.barTintColor = [UIColor belizeHole];
+    self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor cloudsColor],
+                                                                    NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:26.0]};
+    self.navigationItem.title = @"Pick A Network";
 }
 
-- (void)configurePullToRefresh {
-    
+- (void)configureTableView {
+    self.tableView.backgroundColor = [UIColor cloudsColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerNib:[UINib nibWithNibName:MESSAGE_CELL_CLASS bundle:nil] forCellReuseIdentifier:CELL_IDENTIFIER];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +51,30 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 #pragma mark - Table view data source
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ZSSUsernameTableViewController *utvc = [[ZSSUsernameTableViewController alloc] init];
+    
+    switch (indexPath.row) {
+        case 0:
+            utvc.networkName = @"Instagram";
+            break;
+        case 1:
+            utvc.networkName = @"Github";
+            break;
+        case 2:
+            utvc.networkName = @"Pinterest";
+            break;
+        case 3:
+            utvc.networkName = @"Twitter";
+            break;
+        default:
+            break;
+    }
+    
+    [self.navigationController pushViewController:utvc animated:YES];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
@@ -64,6 +91,10 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZSSNetworkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    cell.networkLogoImageView.layer.masksToBounds = YES;
+    cell.networkLogoImageView.layer.cornerRadius = 7.0;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     
     switch (indexPath.row) {
         case 0:
@@ -88,6 +119,8 @@ static NSString *CELL_IDENTIFIER = @"cell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 86.0;
 }
+
+
 
 
 @end

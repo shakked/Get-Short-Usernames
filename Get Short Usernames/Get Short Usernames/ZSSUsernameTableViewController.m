@@ -6,7 +6,11 @@
 //  Copyright (c) 2015 Shkeek Inc. All rights reserved.
 //
 
+#import "UIColor+Flat.h"
 #import "ZSSUsernameTableViewController.h"
+
+static NSString *MESSAGE_CELL_CLASS = @"ZSSUsernameTableViewCell";
+static NSString *CELL_IDENTIFIER = @"cell";
 
 @interface ZSSUsernameTableViewController ()
 
@@ -16,12 +20,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureViews];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+}
+
+- (void)configureViews {
+    [self configureNavBar];
+    [self configureTableView];
+}
+
+- (void)configureNavBar {
+
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor cloudsColor],
+                                                                    NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:26.0]};
+    [self configureNavBarTitle];
+}
+
+- (void)configureNavBarTitle {
+    self.navigationItem.title = self.networkName;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if ([self.networkName isEqual:@"Instagram"]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor instagramColor];
+    } else if ([self.networkName isEqual:@"Github"]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor githubColor];
+    } else if ([self.networkName isEqual:@"Pinterest"]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor pinterestColor];
+    } else if ([self.networkName isEqual:@"Twitter"]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor twitterColor];
+    }
+}
+
+- (void)configureTableView {
+    self.tableView.backgroundColor = [UIColor cloudsColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerNib:[UINib nibWithNibName:MESSAGE_CELL_CLASS bundle:nil] forCellReuseIdentifier:CELL_IDENTIFIER];
 }
 
 - (void)didReceiveMemoryWarning {

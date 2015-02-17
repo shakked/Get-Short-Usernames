@@ -10,4 +10,6 @@
 
 @interface ZSSUsernameTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSString *networkName;
+
 @end

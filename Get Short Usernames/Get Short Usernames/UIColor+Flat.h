@@ -12,4 +12,8 @@
 
 + (UIColor *)belizeHoleColor;
 + (UIColor *)cloudsColor;
++ (UIColor *)instagramColor;
++ (UIColor *)pinterestColor;
++ (UIColor *)twitterColor;
++ (UIColor *)githubColor;
 @end
