@@ -10,6 +10,7 @@
 
 @interface ZSSCloudQuerier : NSObject
 
-- (void)getUsernamesForNetwork:(NSString *)networkName withCompletion:(void (^)(NSArray *, NSError *))completionBlock;
++ (instancetype)sharedQuerier;
+- (void)getUsernamesForNetwork:(NSString *)networkName withCompletion:(void (^)(NSArray *, NSError *))completion;
 
 @end

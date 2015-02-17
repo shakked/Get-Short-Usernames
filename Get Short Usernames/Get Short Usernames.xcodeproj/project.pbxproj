@@ -17,6 +17,8 @@
 		4A12A39C1A92BF7400255534 /* left_filled-66-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A3991A92BF7400255534 /* left_filled-66-2.png */; };
 		4A12A39D1A92BF7400255534 /* left_filled-33-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A39A1A92BF7400255534 /* left_filled-33-2.png */; };
 		4A12A39F1A92D5FF00255534 /* tumblr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A39E1A92D5FF00255534 /* tumblr-logo.png */; };
+		4A12A3A41A92D7A100255534 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A3A31A92D7A100255534 /* Keys.plist */; };
+		4A12A3A51A92D7A100255534 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A3A31A92D7A100255534 /* Keys.plist */; };
 		4A6EA9F51A92A650007ADFF8 /* ZSSNetworkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EA9F41A92A650007ADFF8 /* ZSSNetworkTableViewController.m */; };
 		4A6EA9F81A92A668007ADFF8 /* ZSSUsernameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EA9F71A92A668007ADFF8 /* ZSSUsernameTableViewController.m */; };
 		4A6EAA041A92A6A4007ADFF8 /* ZSSNetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EA9FF1A92A6A4007ADFF8 /* ZSSNetworkTableViewCell.m */; };
@@ -64,6 +66,7 @@
 		4A12A3991A92BF7400255534 /* left_filled-66-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_filled-66-2.png"; sourceTree = "<group>"; };
 		4A12A39A1A92BF7400255534 /* left_filled-33-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_filled-33-2.png"; sourceTree = "<group>"; };
 		4A12A39E1A92D5FF00255534 /* tumblr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tumblr-logo.png"; sourceTree = "<group>"; };
+		4A12A3A31A92D7A100255534 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4A6EA9F31A92A650007ADFF8 /* ZSSNetworkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSNetworkTableViewController.h; sourceTree = "<group>"; };
 		4A6EA9F41A92A650007ADFF8 /* ZSSNetworkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSNetworkTableViewController.m; sourceTree = "<group>"; };
 		4A6EA9F61A92A668007ADFF8 /* ZSSUsernameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSUsernameTableViewController.h; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 		4A0378D81A92A412000D5B7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4A12A3A31A92D7A100255534 /* Keys.plist */,
 				4A12A3951A92B69900255534 /* UIColor+Flat.h */,
 				4A12A3961A92B69900255534 /* UIColor+Flat.m */,
 				4A0378D91A92A412000D5B7C /* Info.plist */,
@@ -298,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A12A3A41A92D7A100255534 /* Keys.plist in Resources */,
 				4A6EAA071A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib in Resources */,
 				4A6EAA201A92B0EC007ADFF8 /* instagram-logo.png in Resources */,
 				4A12A39F1A92D5FF00255534 /* tumblr-logo.png in Resources */,
@@ -321,6 +326,7 @@
 				4A6EAA1F1A92B0EC007ADFF8 /* github-logo.png in Resources */,
 				4A6EAA211A92B0EC007ADFF8 /* instagram-logo.png in Resources */,
 				4A6EAA231A92B0EC007ADFF8 /* pinterest-logo.png in Resources */,
+				4A12A3A51A92D7A100255534 /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
