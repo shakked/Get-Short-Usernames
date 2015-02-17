@@ -25,6 +25,9 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleColor];
+}
 - (void)configureViews {
     [self configureNavBar];
     [self configureTableView];
@@ -69,6 +72,8 @@ static NSString *CELL_IDENTIFIER = @"cell";
         case 3:
             utvc.networkName = @"Twitter";
             break;
+        case 4:
+            utvc.networkName = @"Tumblr";
         default:
             break;
     }
@@ -85,7 +90,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 5;
 }
 
 
@@ -109,6 +114,8 @@ static NSString *CELL_IDENTIFIER = @"cell";
         case 3:
             cell.networkLogoImageView.image = [UIImage imageNamed:@"twitter-logo.png"];
             break;
+        case 4:
+            cell.networkLogoImageView.image = [UIImage imageNamed:@"tumblr-logo.png"];
         default:
             break;
     }

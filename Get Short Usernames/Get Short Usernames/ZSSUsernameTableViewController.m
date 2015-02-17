@@ -30,12 +30,13 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (void)configureNavBar {
-
+    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor cloudsColor],
                                                                     NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:26.0]};
     [self configureNavBarTitle];
+    [self configureNavBarButtons];
 }
 
 - (void)configureNavBarTitle {
@@ -49,7 +50,18 @@ static NSString *CELL_IDENTIFIER = @"cell";
         self.navigationController.navigationBar.barTintColor = [UIColor pinterestColor];
     } else if ([self.networkName isEqual:@"Twitter"]) {
         self.navigationController.navigationBar.barTintColor = [UIColor twitterColor];
+    } else if ([self.networkName isEqual:@"Tumblr"]) {
+        self.navigationController.navigationBar.barTintColor = [UIColor tumblrColor];
     }
+}
+
+- (void)configureNavBarButtons {
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.bounds = CGRectMake(0, 0, 33, 33);
+    [backButton setBackgroundImage:[UIImage imageNamed:@"BackButton"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(showPreviousView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = backBarButton;
 }
 
 - (void)configureTableView {
@@ -87,48 +99,9 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 */
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)showPreviousView {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

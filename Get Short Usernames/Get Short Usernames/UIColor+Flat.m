@@ -50,8 +50,15 @@
 + (UIColor *)twitterColor {
     return [UIColor colorWithRed:46.0/255
                            green:178.0/255
-                            blue:34.0/255
-                           alpha:231.0];
+                            blue:231.0/255
+                           alpha:1.0];
+}
+
++ (UIColor *)tumblrColor {
+    return [UIColor colorWithRed:53.0/255
+                           green:70.0/255
+                            blue:93.0/255
+                           alpha:1.0];
 }
 
 

@@ -16,4 +16,6 @@
 + (UIColor *)pinterestColor;
 + (UIColor *)twitterColor;
 + (UIColor *)githubColor;
++ (UIColor *)tumblrColor;
+
 @end
