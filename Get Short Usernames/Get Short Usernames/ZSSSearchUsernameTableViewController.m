@@ -8,6 +8,7 @@
 
 #import "ZSSSearchUsernameTableViewController.h"
 #import "UIColor+Flat.h"
+#import "ZSSSearchTableViewCell.h"
 
 
 static NSString *MESSAGE_CELL_CLASS = @"ZSSSearchTableViewCell";
@@ -16,6 +17,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 @interface ZSSSearchUsernameTableViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong) UISearchBar *searchBar;
+@property (nonatomic, strong) NSString *currentUsername;
 
 @end
 
@@ -43,7 +45,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
                                                                     NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:26.0]};
     self.searchBar = [[UISearchBar alloc] init];
     self.searchBar.delegate = self;
-    self.navigationItem.titleView = self.searchBar;
+    self.navigationItem.title = @"Search a Username";
 }
 
 - (void)configureTableView {
@@ -55,69 +57,67 @@ static NSString *CELL_IDENTIFIER = @"cell";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return self.searchBar;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 5;
 }
 
-/*
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44; // The height of the search bar
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    ZSSSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    [self configureNetworksOfCell:cell forIndexPath:indexPath];
+    cell.usernameLabel.text = self.currentUsername;
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+    
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)configureNetworksOfCell:(ZSSSearchTableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:
+            cell.networkIconImageView.image = [UIImage imageNamed:@"instagram-icon.png"];
+            break;
+            
+        case 1:
+            cell.networkIconImageView.image = [UIImage imageNamed:@"github-icon.png"];
+            break;
+            
+        case 2:
+            cell.networkIconImageView.image = [UIImage imageNamed:@"pinterest-icon.png"];
+            break;
+        
+        case 3:
+            cell.networkIconImageView.image = [UIImage imageNamed:@"twitter-icon.png"];
+            break;
+            
+        case 4:
+            cell.networkIconImageView.image = [UIImage imageNamed:@"tumblr-icon.png"];
+            break;
+            
+        default:
+            break;
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    self.currentUsername = searchText;
+    [self.tableView reloadData];
+    [self.searchBar becomeFirstResponder];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

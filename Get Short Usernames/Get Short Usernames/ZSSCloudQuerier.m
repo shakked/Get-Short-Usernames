@@ -52,6 +52,25 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     }];
 }
 
+- (void)checkInstagramForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    NSDictionary *jsonDictionary = @{@"network" : networkName};
+    
+    
+    NSDictionary *parameters = @{@"where" : @{@"network" : networkName},
+                                 @"limit" : @100};
+    
+    [manager GET:@"https://api.parse.com/1/classes/ZSSUsername" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(responseObject[@"results"], nil);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(nil,error);
+    }];
+}
+
+
 - (void)throwInvalidJsonDataException {
     @throw [NSException exceptionWithName:@"jsonDataException"
                                    reason:@"Failed to create NSData with provided json dictionary"
