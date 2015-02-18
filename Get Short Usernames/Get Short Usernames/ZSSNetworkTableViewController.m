@@ -9,6 +9,8 @@
 #import "ZSSNetworkTableViewController.h"
 #import "ZSSNetworkTableViewCell.h"
 #import "ZSSUsernameTableViewController.h"
+#import "ZSSCloudQuerier.h"
+#import "ZSSSearchUsernameTableViewController.h"
 
 static NSString *MESSAGE_CELL_CLASS = @"ZSSNetworkTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
@@ -40,6 +42,11 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor cloudsColor],
                                                                     NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:26.0]};
     self.navigationItem.title = @"Pick A Network";
+    
+    UIBarButtonItem *searchBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                                                                     target:self
+                                                                                     action:@selector(showSearchView)];
+    self.navigationItem.rightBarButtonItem = searchBarButton;
 }
 
 - (void)configureTableView {
@@ -56,6 +63,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 #pragma mark - Table view data source
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     
     ZSSUsernameTableViewController *utvc = [[ZSSUsernameTableViewController alloc] init];
     
@@ -127,7 +135,11 @@ static NSString *CELL_IDENTIFIER = @"cell";
     return 86.0;
 }
 
-
+- (void)showSearchView {
+    ZSSUsernameTableViewController *utvc = [[ZSSUsernameTableViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:utvc];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 
 @end

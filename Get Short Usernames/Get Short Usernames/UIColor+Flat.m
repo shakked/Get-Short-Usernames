@@ -61,5 +61,10 @@
                            alpha:1.0];
 }
 
-
++ (UIColor *)salmonColor {
+    return [UIColor colorWithRed:255.0/255
+                           green:83.0/255
+                            blue:74.0/255
+                           alpha:1.0];
+}
 @end

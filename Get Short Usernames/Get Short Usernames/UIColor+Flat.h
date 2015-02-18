@@ -17,5 +17,6 @@
 + (UIColor *)twitterColor;
 + (UIColor *)githubColor;
 + (UIColor *)tumblrColor;
++ (UIColor *)salmonColor;
 
 @end

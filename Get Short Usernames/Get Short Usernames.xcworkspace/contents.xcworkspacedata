@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Keys.plist">
-   </FileRef>
-   <FileRef
       location = "group:Get Short Usernames.xcodeproj">
    </FileRef>
    <FileRef

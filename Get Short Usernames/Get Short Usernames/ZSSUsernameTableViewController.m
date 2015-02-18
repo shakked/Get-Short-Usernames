@@ -8,11 +8,16 @@
 
 #import "UIColor+Flat.h"
 #import "ZSSUsernameTableViewController.h"
+#import "ZSSUsernameTableViewCell.h"
+#import "ZSSCloudQuerier.h"
+#import "RKDropdownAlert.h"
 
 static NSString *MESSAGE_CELL_CLASS = @"ZSSUsernameTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
 
 @interface ZSSUsernameTableViewController ()
+
+@property (nonatomic, strong) NSArray *usernames;
 
 @end
 
@@ -22,6 +27,23 @@ static NSString *CELL_IDENTIFIER = @"cell";
     [super viewDidLoad];
     [self configureViews];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadUsernameData];
+}
+
+- (void)loadUsernameData {
+    NSString *networkName = [self.networkName lowercaseString];
+    [[ZSSCloudQuerier sharedQuerier] getUsernamesForNetwork:networkName withCompletion:^(NSArray *usernames, NSError *error) {
+        if (!error) {
+            self.usernames = usernames;
+            [self.tableView reloadData];
+        } else {
+            [RKDropdownAlert title:@"No Internet Connection" backgroundColor:[UIColor salmonColor] textColor:[UIColor whiteColor]];
+        }
+    }];
 }
 
 - (void)configureViews {
@@ -80,24 +102,23 @@ static NSString *CELL_IDENTIFIER = @"cell";
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.usernames count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    ZSSUsernameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    NSDictionary *username = self.usernames[indexPath.row];
+    cell.usernameLabel.text = username[@"username"];
     
     return cell;
 }
-*/
 
 - (void)showPreviousView {
     [self.navigationController popViewControllerAnimated:YES];

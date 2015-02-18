@@ -10,7 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 
-static NSString * const BaseURLString = @" https://api.parse.com";
+static NSString * const BaseURLString = @"https://api.parse.com";
 
 @interface ZSSCloudQuerier () {
     NSString *parseApplicationId;
@@ -37,20 +37,19 @@ static NSString * const BaseURLString = @" https://api.parse.com";
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager.requestSerializer setValue:parseApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
     [manager.requestSerializer setValue:parseRestAPIKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    NSDictionary *jsonDictionary = @{@"network" : networkName};
+    
 
-            NSDictionary *jsonDictionary = @{};
-            
-            NSString *json = [self getJSONfromDictionary:jsonDictionary];
-            NSDictionary *parameters = @{@"where" : json,
-                                         @"order" : @"-karma",
-                                         @"limit" : @100};
-            
-            [manager GET:@"https://api.parse.com/1/classes/ZSSShak" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                completion(responseObject[@"results"], nil);
-                
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                completion(nil,error);
-            }];
+    NSDictionary *parameters = @{@"where" : @{@"network" : networkName},
+                                 @"limit" : @100};
+    
+    [manager GET:@"https://api.parse.com/1/classes/ZSSUsername" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(responseObject[@"results"], nil);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(nil,error);
+    }];
 }
 
 - (void)throwInvalidJsonDataException {

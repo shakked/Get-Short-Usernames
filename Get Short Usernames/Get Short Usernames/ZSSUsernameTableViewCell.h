@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZSSUsernameTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end

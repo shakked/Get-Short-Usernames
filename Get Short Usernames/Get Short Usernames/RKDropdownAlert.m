@@ -8,7 +8,7 @@
 //  objective-c objc obj c
 
 #import "RKDropdownAlert.h"
-#import "UIColor+Shik_Shak_Colors.h"
+#import "UIColor+Flat.h"
 
 //%%% CUSTOMIZE FOR DEFAULT SETTINGS
 // These values specify what the view will look like
