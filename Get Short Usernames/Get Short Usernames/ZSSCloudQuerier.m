@@ -56,17 +56,13 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.securityPolicy.allowInvalidCertificates = YES;
-    NSDictionary *jsonDictionary = @{@"network" : networkName};
     
-    
-    NSDictionary *parameters = @{@"where" : @{@"network" : networkName},
-                                 @"limit" : @100};
-    
-    [manager GET:@"https://api.parse.com/1/classes/ZSSUsername" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:[NSString stringWithFormat:@"http://instagram.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         completion(responseObject[@"results"], nil);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completion(nil,error);
+        
     }];
 }
 
