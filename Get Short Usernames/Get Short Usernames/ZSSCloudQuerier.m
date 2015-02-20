@@ -38,11 +38,12 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     [manager.requestSerializer setValue:parseApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
     [manager.requestSerializer setValue:parseRestAPIKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
     manager.securityPolicy.allowInvalidCertificates = YES;
-    NSDictionary *jsonDictionary = @{@"network" : networkName};
+    NSDictionary *jsonDictionary = @{@"network" : networkName,
+                                     @"available" : @YES};
     
-
-    NSDictionary *parameters = @{@"where" : @{@"network" : networkName},
-                                 @"limit" : @100};
+    NSString *json = [self getJSONfromDictionary:jsonDictionary];
+    NSDictionary *parameters = @{@"where" :json,
+                                 @"limit" : @1000};
     
     [manager GET:@"https://api.parse.com/1/classes/ZSSUsername" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         completion(responseObject[@"results"], nil);
@@ -58,14 +59,113 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     manager.securityPolicy.allowInvalidCertificates = YES;
     
     [manager GET:[NSString stringWithFormat:@"http://instagram.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(responseObject[@"results"], nil);
+        NSLog(@"response:%@", responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(nil,error);
+        NSInteger statusCode = operation.response.statusCode;
         
+        switch (statusCode) {
+            case 201:
+                completion(NO, nil);
+                break;
+            case 404:
+                completion(YES, nil);
+            default:
+                completion(NO, error);
+                break;
+        }
     }];
 }
 
+- (void)checkGithubForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    [manager GET:[NSString stringWithFormat:@"http://github.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"response:%@", responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSInteger statusCode = operation.response.statusCode;
+        
+        switch (statusCode) {
+            case 201:
+                completion(NO, nil);
+                break;
+            case 404:
+                completion(YES, nil);
+            default:
+                completion(NO, error);
+                break;
+        }
+    }];
+}
+
+- (void)checkPinterestForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    [manager GET:[NSString stringWithFormat:@"https://www.pinterest.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"response:%@", responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSInteger statusCode = operation.response.statusCode;
+        
+        switch (statusCode) {
+            case 201:
+                completion(NO, nil);
+                break;
+            case 404:
+                completion(YES, nil);
+            default:
+                completion(NO, error);
+                break;
+        }
+    }];
+}
+
+- (void)checkTumblrForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    [manager GET:[NSString stringWithFormat:@"http://%@.tumblr.com", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"response:%@", responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSInteger statusCode = operation.response.statusCode;
+        
+        switch (statusCode) {
+            case 201:
+                completion(NO, nil);
+                break;
+            case 404:
+                completion(YES, nil);
+            default:
+                completion(NO, error);
+                break;
+        }
+    }];
+}
+
+
+- (void)checkTwitterForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@", username]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(NO, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(YES, nil);
+    }];
+    [op start];
+
+}
 
 - (void)throwInvalidJsonDataException {
     @throw [NSException exceptionWithName:@"jsonDataException"

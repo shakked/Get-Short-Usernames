@@ -19,6 +19,11 @@
 		4A12A39F1A92D5FF00255534 /* tumblr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A39E1A92D5FF00255534 /* tumblr-logo.png */; };
 		4A12A3A81A92E48400255534 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12A3A71A92E48400255534 /* RKDropdownAlert.m */; };
 		4A12A3A91A92E48400255534 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12A3A71A92E48400255534 /* RKDropdownAlert.m */; };
+		4A32DD4C1A95950800449F95 /* github-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD471A95950800449F95 /* github-icon.png */; };
+		4A32DD4D1A95950800449F95 /* instagram-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD481A95950800449F95 /* instagram-icon.png */; };
+		4A32DD4E1A95950800449F95 /* pinterest-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD491A95950800449F95 /* pinterest-icon.png */; };
+		4A32DD4F1A95950800449F95 /* tumblr-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD4A1A95950800449F95 /* tumblr-icon.png */; };
+		4A32DD501A95950800449F95 /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD4B1A95950800449F95 /* twitter-icon.png */; };
 		4A49DAF01A92E9B800C17370 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A49DAEF1A92E9B800C17370 /* Keys.plist */; };
 		4A49DAF41A92EDB900C17370 /* AppStoreIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A49DAF11A92EDB900C17370 /* AppStoreIcon.jpg */; };
 		4A49DAF51A92EDB900C17370 /* AppStoreIcon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A49DAF21A92EDB900C17370 /* AppStoreIcon@2x.jpg */; };
@@ -49,14 +54,8 @@
 		4A6EAA231A92B0EC007ADFF8 /* pinterest-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */; };
 		4A6EAA241A92B0EC007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */; };
 		4A6EAA251A92B0EC007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */; };
-		4AB1A5C31A9433AB00703F5B /* github-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1A5C21A9433AB00703F5B /* github-icon.png */; };
 		4ADB73AD1A942C0000BB053D /* ZSSSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB73AB1A942C0000BB053D /* ZSSSearchTableViewCell.m */; };
 		4ADB73AE1A942C0000BB053D /* ZSSSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73AC1A942C0000BB053D /* ZSSSearchTableViewCell.xib */; };
-		4ADB73B41A942E6800BB053D /* github-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73AF1A942E6800BB053D /* github-icon.png */; };
-		4ADB73B51A942E6800BB053D /* instagram-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73B01A942E6800BB053D /* instagram-icon.png */; };
-		4ADB73B61A942E6800BB053D /* pinterest-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73B11A942E6800BB053D /* pinterest-icon.png */; };
-		4ADB73B71A942E6800BB053D /* tumblr-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73B21A942E6800BB053D /* tumblr-icon.png */; };
-		4ADB73B81A942E6800BB053D /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73B31A942E6800BB053D /* twitter-icon.png */; };
 		4ADB73BF1A94307500BB053D /* Cancel-33.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73B91A94307500BB053D /* Cancel-33.png */; };
 		4ADB73C01A94307500BB053D /* Cancel-66.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BA1A94307500BB053D /* Cancel-66.png */; };
 		4ADB73C11A94307500BB053D /* Cancel-99.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BB1A94307500BB053D /* Cancel-99.png */; };
@@ -97,6 +96,11 @@
 		4A12A39E1A92D5FF00255534 /* tumblr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tumblr-logo.png"; sourceTree = "<group>"; };
 		4A12A3A61A92E48400255534 /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		4A12A3A71A92E48400255534 /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
+		4A32DD471A95950800449F95 /* github-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "github-icon.png"; path = "../../../../../Downloads/somacro__45_300dpi_social_media_icons_by_vervex-d4fj7q9/border/github-icon.png"; sourceTree = "<group>"; };
+		4A32DD481A95950800449F95 /* instagram-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "instagram-icon.png"; path = "../../../../../Downloads/somacro__45_300dpi_social_media_icons_by_vervex-d4fj7q9/border/instagram-icon.png"; sourceTree = "<group>"; };
+		4A32DD491A95950800449F95 /* pinterest-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinterest-icon.png"; path = "../../../../../Downloads/somacro__45_300dpi_social_media_icons_by_vervex-d4fj7q9/border/pinterest-icon.png"; sourceTree = "<group>"; };
+		4A32DD4A1A95950800449F95 /* tumblr-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tumblr-icon.png"; path = "../../../../../Downloads/somacro__45_300dpi_social_media_icons_by_vervex-d4fj7q9/border/tumblr-icon.png"; sourceTree = "<group>"; };
+		4A32DD4B1A95950800449F95 /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-icon.png"; path = "../../../../../Downloads/somacro__45_300dpi_social_media_icons_by_vervex-d4fj7q9/border/twitter-icon.png"; sourceTree = "<group>"; };
 		4A49DAEF1A92E9B800C17370 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		4A49DAF11A92EDB900C17370 /* AppStoreIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AppStoreIcon.jpg; sourceTree = "<group>"; };
 		4A49DAF21A92EDB900C17370 /* AppStoreIcon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AppStoreIcon@2x.jpg"; sourceTree = "<group>"; };
@@ -128,15 +132,9 @@
 		4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram-logo.png"; sourceTree = "<group>"; };
 		4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinterest-logo.png"; sourceTree = "<group>"; };
 		4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-logo.png"; sourceTree = "<group>"; };
-		4AB1A5C21A9433AB00703F5B /* github-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "github-icon.png"; path = "images/icons/github-icon.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73AA1A942C0000BB053D /* ZSSSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSSearchTableViewCell.h; sourceTree = "<group>"; };
 		4ADB73AB1A942C0000BB053D /* ZSSSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSSearchTableViewCell.m; sourceTree = "<group>"; };
 		4ADB73AC1A942C0000BB053D /* ZSSSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSSearchTableViewCell.xib; sourceTree = "<group>"; };
-		4ADB73AF1A942E6800BB053D /* github-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "github-icon.png"; path = "images/icons/github-icon.png"; sourceTree = SOURCE_ROOT; };
-		4ADB73B01A942E6800BB053D /* instagram-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "instagram-icon.png"; path = "images/icons/instagram-icon.png"; sourceTree = SOURCE_ROOT; };
-		4ADB73B11A942E6800BB053D /* pinterest-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinterest-icon.png"; path = "images/icons/pinterest-icon.png"; sourceTree = SOURCE_ROOT; };
-		4ADB73B21A942E6800BB053D /* tumblr-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tumblr-icon.png"; path = "images/icons/tumblr-icon.png"; sourceTree = SOURCE_ROOT; };
-		4ADB73B31A942E6800BB053D /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-icon.png"; path = "images/icons/twitter-icon.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73B91A94307500BB053D /* Cancel-33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel-33.png"; path = "images/icons/Cancel-33.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73BA1A94307500BB053D /* Cancel-66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel-66.png"; path = "images/icons/Cancel-66.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73BB1A94307500BB053D /* Cancel-99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel-99.png"; path = "images/icons/Cancel-99.png"; sourceTree = SOURCE_ROOT; };
@@ -279,18 +277,17 @@
 		4ADB73A91A942BE000BB053D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4AB1A5C21A9433AB00703F5B /* github-icon.png */,
+				4A32DD471A95950800449F95 /* github-icon.png */,
+				4A32DD481A95950800449F95 /* instagram-icon.png */,
+				4A32DD491A95950800449F95 /* pinterest-icon.png */,
+				4A32DD4A1A95950800449F95 /* tumblr-icon.png */,
+				4A32DD4B1A95950800449F95 /* twitter-icon.png */,
 				4ADB73B91A94307500BB053D /* Cancel-33.png */,
 				4ADB73BA1A94307500BB053D /* Cancel-66.png */,
 				4ADB73BB1A94307500BB053D /* Cancel-99.png */,
 				4ADB73BC1A94307500BB053D /* Checkmark-33.png */,
 				4ADB73BD1A94307500BB053D /* Checkmark-66.png */,
 				4ADB73BE1A94307500BB053D /* Checkmark-99.png */,
-				4ADB73AF1A942E6800BB053D /* github-icon.png */,
-				4ADB73B01A942E6800BB053D /* instagram-icon.png */,
-				4ADB73B11A942E6800BB053D /* pinterest-icon.png */,
-				4ADB73B21A942E6800BB053D /* tumblr-icon.png */,
-				4ADB73B31A942E6800BB053D /* twitter-icon.png */,
 				4A6EAA1A1A92B0EC007ADFF8 /* github-logo.png */,
 				4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */,
 				4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */,
@@ -417,7 +414,6 @@
 				4A6EAA071A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib in Resources */,
 				4A49DB001A92EE3800C17370 /* Spotlight.png in Resources */,
 				4A49DB081A92EE7B00C17370 /* Settings@3x.png in Resources */,
-				4ADB73B71A942E6800BB053D /* tumblr-icon.png in Resources */,
 				4ADB73AE1A942C0000BB053D /* ZSSSearchTableViewCell.xib in Resources */,
 				4ADB73C21A94307500BB053D /* Checkmark-33.png in Resources */,
 				4A49DAFA1A92EE0200C17370 /* AppStoreIcon.png in Resources */,
@@ -429,22 +425,22 @@
 				4A12A39F1A92D5FF00255534 /* tumblr-logo.png in Resources */,
 				4A6EAA1E1A92B0EC007ADFF8 /* github-logo.png in Resources */,
 				4A49DB011A92EE3800C17370 /* Spotlight@2x.png in Resources */,
-				4AB1A5C31A9433AB00703F5B /* github-icon.png in Resources */,
 				4A49DB071A92EE7B00C17370 /* Settings@2x.png in Resources */,
+				4A32DD4E1A95950800449F95 /* pinterest-icon.png in Resources */,
 				4A49DAFC1A92EE0200C17370 /* AppStoreIcon@3x.png in Resources */,
-				4ADB73B51A942E6800BB053D /* instagram-icon.png in Resources */,
 				4A12A39C1A92BF7400255534 /* left_filled-66-2.png in Resources */,
+				4A32DD4C1A95950800449F95 /* github-icon.png in Resources */,
+				4A32DD4F1A95950800449F95 /* tumblr-icon.png in Resources */,
 				4A0378E91A92A412000D5B7C /* LaunchScreen.xib in Resources */,
 				4A49DAFB1A92EE0200C17370 /* AppStoreIcon@2x.png in Resources */,
 				4A6EAA241A92B0EC007ADFF8 /* twitter-logo.png in Resources */,
 				4A12A39B1A92BF7400255534 /* left_filled-99-2.png in Resources */,
-				4ADB73B41A942E6800BB053D /* github-icon.png in Resources */,
 				4ADB73BF1A94307500BB053D /* Cancel-33.png in Resources */,
-				4ADB73B81A942E6800BB053D /* twitter-icon.png in Resources */,
+				4A32DD501A95950800449F95 /* twitter-icon.png in Resources */,
 				4A12A39D1A92BF7400255534 /* left_filled-33-2.png in Resources */,
+				4A32DD4D1A95950800449F95 /* instagram-icon.png in Resources */,
 				4ADB73C41A94307500BB053D /* Checkmark-99.png in Resources */,
 				4A6EAA221A92B0EC007ADFF8 /* pinterest-logo.png in Resources */,
-				4ADB73B61A942E6800BB053D /* pinterest-icon.png in Resources */,
 				4ADB73C31A94307500BB053D /* Checkmark-66.png in Resources */,
 				4A0378E61A92A412000D5B7C /* Images.xcassets in Resources */,
 				4A6EAA051A92A6A4007ADFF8 /* ZSSNetworkTableViewCell.xib in Resources */,

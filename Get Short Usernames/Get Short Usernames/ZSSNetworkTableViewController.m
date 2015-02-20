@@ -137,8 +137,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (void)showSearchView {
     ZSSSearchUsernameTableViewController *sutvc = [[ZSSSearchUsernameTableViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sutvc];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:sutvc animated:YES];
 }
 
 

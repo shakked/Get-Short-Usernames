@@ -33,10 +33,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
     [super viewWillAppear:animated];
     [self loadUsernameData];
 
-    [[ZSSCloudQuerier sharedQuerier] checkInstagramForUsername:@"zachary231123123123" withCompletion:^(BOOL available, NSError *error) {
-        
-        
-    }];
 }
 
 - (void)loadUsernameData {
