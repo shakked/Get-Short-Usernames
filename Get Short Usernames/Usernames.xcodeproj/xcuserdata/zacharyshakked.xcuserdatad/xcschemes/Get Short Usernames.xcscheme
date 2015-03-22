@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
-               BuildableName = "Get Short Usernames.app"
-               BlueprintName = "Get Short Usernames"
-               ReferencedContainer = "container:Get Short Usernames.xcodeproj">
+               BuildableName = "Usernames.app"
+               BlueprintName = "Usernames.temp_caseinsensitive_rename"
+               ReferencedContainer = "container:Usernames.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A0378ED1A92A413000D5B7C"
-               BuildableName = "Get Short UsernamesTests.xctest"
-               BlueprintName = "Get Short UsernamesTests"
-               ReferencedContainer = "container:Get Short Usernames.xcodeproj">
+               BuildableName = "Usernames.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "Usernames.temp_caseinsensitive_renameTests"
+               ReferencedContainer = "container:Usernames.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A0378ED1A92A413000D5B7C"
-               BuildableName = "Get Short UsernamesTests.xctest"
-               BlueprintName = "Get Short UsernamesTests"
-               ReferencedContainer = "container:Get Short Usernames.xcodeproj">
+               BuildableName = "Usernames.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "Usernames.temp_caseinsensitive_renameTests"
+               ReferencedContainer = "container:Usernames.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
-            BuildableName = "Get Short Usernames.app"
-            BlueprintName = "Get Short Usernames"
-            ReferencedContainer = "container:Get Short Usernames.xcodeproj">
+            BuildableName = "Usernames.app"
+            BlueprintName = "Usernames.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:Usernames.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
-            BuildableName = "Get Short Usernames.app"
-            BlueprintName = "Get Short Usernames"
-            ReferencedContainer = "container:Get Short Usernames.xcodeproj">
+            BuildableName = "Usernames.app"
+            BlueprintName = "Usernames.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:Usernames.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
-            BuildableName = "Get Short Usernames.app"
-            BlueprintName = "Get Short Usernames"
-            ReferencedContainer = "container:Get Short Usernames.xcodeproj">
+            BuildableName = "Usernames.app"
+            BlueprintName = "Usernames.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:Usernames.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

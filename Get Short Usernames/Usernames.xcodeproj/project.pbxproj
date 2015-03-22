@@ -78,14 +78,14 @@
 
 /* Begin PBXFileReference section */
 		1281F4DACB9D04259C957572 /* Pods-Get Short UsernamesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short UsernamesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short UsernamesTests/Pods-Get Short UsernamesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A0378D51A92A412000D5B7C /* Get Short Usernames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Short Usernames.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0378D51A92A412000D5B7C /* Usernames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Usernames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0378D91A92A412000D5B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0378DA1A92A412000D5B7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A0378DC1A92A412000D5B7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A0378DD1A92A412000D5B7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4A0378E51A92A412000D5B7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4A0378E81A92A412000D5B7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4A0378EE1A92A413000D5B7C /* Get Short UsernamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Get Short UsernamesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0378EE1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Usernames.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0378F31A92A413000D5B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0378F41A92A413000D5B7C /* Get_Short_UsernamesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Get_Short_UsernamesTests.m; sourceTree = "<group>"; };
 		4A12A3951A92B69900255534 /* UIColor+Flat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Flat.h"; sourceTree = "<group>"; };
@@ -191,8 +191,8 @@
 		4A0378D61A92A412000D5B7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A0378D51A92A412000D5B7C /* Get Short Usernames.app */,
-				4A0378EE1A92A413000D5B7C /* Get Short UsernamesTests.xctest */,
+				4A0378D51A92A412000D5B7C /* Usernames.app */,
+				4A0378EE1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,9 +326,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A0378D41A92A412000D5B7C /* Get Short Usernames */ = {
+		4A0378D41A92A412000D5B7C /* Usernames.temp_caseinsensitive_rename */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Get Short Usernames" */;
+			buildConfigurationList = 4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_rename" */;
 			buildPhases = (
 				49961130D346789048E839ED /* Check Pods Manifest.lock */,
 				4A0378D11A92A412000D5B7C /* Sources */,
@@ -340,14 +340,14 @@
 			);
 			dependencies = (
 			);
-			name = "Get Short Usernames";
+			name = Usernames.temp_caseinsensitive_rename;
 			productName = "Get Short Usernames";
-			productReference = 4A0378D51A92A412000D5B7C /* Get Short Usernames.app */;
+			productReference = 4A0378D51A92A412000D5B7C /* Usernames.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4A0378ED1A92A413000D5B7C /* Get Short UsernamesTests */ = {
+		4A0378ED1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A0378FB1A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Get Short UsernamesTests" */;
+			buildConfigurationList = 4A0378FB1A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_renameTests" */;
 			buildPhases = (
 				E53A07615F5E321BF40C6844 /* Check Pods Manifest.lock */,
 				4A0378EA1A92A413000D5B7C /* Sources */,
@@ -360,9 +360,9 @@
 			dependencies = (
 				4A0378F01A92A413000D5B7C /* PBXTargetDependency */,
 			);
-			name = "Get Short UsernamesTests";
+			name = Usernames.temp_caseinsensitive_renameTests;
 			productName = "Get Short UsernamesTests";
-			productReference = 4A0378EE1A92A413000D5B7C /* Get Short UsernamesTests.xctest */;
+			productReference = 4A0378EE1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -376,6 +376,7 @@
 				TargetAttributes = {
 					4A0378D41A92A412000D5B7C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9EFTW5NYHY;
 					};
 					4A0378ED1A92A413000D5B7C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -383,7 +384,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A0378D01A92A412000D5B7C /* Build configuration list for PBXProject "Get Short Usernames" */;
+			buildConfigurationList = 4A0378D01A92A412000D5B7C /* Build configuration list for PBXProject "Usernames" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -396,8 +397,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A0378D41A92A412000D5B7C /* Get Short Usernames */,
-				4A0378ED1A92A413000D5B7C /* Get Short UsernamesTests */,
+				4A0378D41A92A412000D5B7C /* Usernames.temp_caseinsensitive_rename */,
+				4A0378ED1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -557,7 +558,7 @@
 /* Begin PBXTargetDependency section */
 		4A0378F01A92A413000D5B7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4A0378D41A92A412000D5B7C /* Get Short Usernames */;
+			target = 4A0378D41A92A412000D5B7C /* Usernames.temp_caseinsensitive_rename */;
 			targetProxy = 4A0378EF1A92A413000D5B7C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -655,10 +656,11 @@
 			baseConfigurationReference = FFA06A8E52BBB22393803699 /* Pods-Get Short Usernames.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Get Short Usernames/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Usernames;
 				PROVISIONING_PROFILE = "2a980103-bff3-477a-9ced-520e83be1be5";
 			};
 			name = Debug;
@@ -668,11 +670,12 @@
 			baseConfigurationReference = 85422DE9F116E552BA43C7C9 /* Pods-Get Short Usernames.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zachary Shakked (9EFTW5NYHY)";
 				INFOPLIST_FILE = "Get Short Usernames/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Usernames;
 				PROVISIONING_PROFILE = "2453e03d-0fb1-49b8-bcaf-94ba28ca25fa";
 			};
 			name = Release;
@@ -692,7 +695,7 @@
 				);
 				INFOPLIST_FILE = "Get Short UsernamesTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Usernames.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Short Usernames.app/Get Short Usernames";
 			};
 			name = Debug;
@@ -708,7 +711,7 @@
 				);
 				INFOPLIST_FILE = "Get Short UsernamesTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Usernames.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Short Usernames.app/Get Short Usernames";
 			};
 			name = Release;
@@ -716,7 +719,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A0378D01A92A412000D5B7C /* Build configuration list for PBXProject "Get Short Usernames" */ = {
+		4A0378D01A92A412000D5B7C /* Build configuration list for PBXProject "Usernames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A0378F61A92A413000D5B7C /* Debug */,
@@ -725,7 +728,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Get Short Usernames" */ = {
+		4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_rename" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A0378F91A92A413000D5B7C /* Debug */,
@@ -734,7 +737,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A0378FB1A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Get Short UsernamesTests" */ = {
+		4A0378FB1A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_renameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A0378FC1A92A413000D5B7C /* Debug */,
