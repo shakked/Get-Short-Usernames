@@ -11,14 +11,12 @@
 		4A0378DE1A92A412000D5B7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0378DD1A92A412000D5B7C /* AppDelegate.m */; };
 		4A0378E61A92A412000D5B7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0378E51A92A412000D5B7C /* Images.xcassets */; };
 		4A0378E91A92A412000D5B7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0378E71A92A412000D5B7C /* LaunchScreen.xib */; };
-		4A0378F51A92A413000D5B7C /* Get_Short_UsernamesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0378F41A92A413000D5B7C /* Get_Short_UsernamesTests.m */; };
 		4A12A3971A92B69900255534 /* UIColor+Flat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12A3961A92B69900255534 /* UIColor+Flat.m */; };
 		4A12A39B1A92BF7400255534 /* left_filled-99-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A3981A92BF7400255534 /* left_filled-99-2.png */; };
 		4A12A39C1A92BF7400255534 /* left_filled-66-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A3991A92BF7400255534 /* left_filled-66-2.png */; };
 		4A12A39D1A92BF7400255534 /* left_filled-33-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A39A1A92BF7400255534 /* left_filled-33-2.png */; };
 		4A12A39F1A92D5FF00255534 /* tumblr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A12A39E1A92D5FF00255534 /* tumblr-logo.png */; };
 		4A12A3A81A92E48400255534 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12A3A71A92E48400255534 /* RKDropdownAlert.m */; };
-		4A12A3A91A92E48400255534 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12A3A71A92E48400255534 /* RKDropdownAlert.m */; };
 		4A32DD4C1A95950800449F95 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD471A95950800449F95 /* github.png */; };
 		4A32DD4D1A95950800449F95 /* instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD481A95950800449F95 /* instagram.png */; };
 		4A32DD4E1A95950800449F95 /* pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A32DD491A95950800449F95 /* pinterest.png */; };
@@ -45,15 +43,10 @@
 		4A6EAA061A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EAA021A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.m */; };
 		4A6EAA071A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA031A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib */; };
 		4A6EAA0C1A92A6C2007ADFF8 /* ZSSCloudQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0B1A92A6C2007ADFF8 /* ZSSCloudQuerier.m */; };
-		4A6EAA0D1A92A6C2007ADFF8 /* ZSSCloudQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6EAA0B1A92A6C2007ADFF8 /* ZSSCloudQuerier.m */; };
 		4A6EAA1E1A92B0EC007ADFF8 /* github-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1A1A92B0EC007ADFF8 /* github-logo.png */; };
-		4A6EAA1F1A92B0EC007ADFF8 /* github-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1A1A92B0EC007ADFF8 /* github-logo.png */; };
 		4A6EAA201A92B0EC007ADFF8 /* instagram-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */; };
-		4A6EAA211A92B0EC007ADFF8 /* instagram-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1B1A92B0EC007ADFF8 /* instagram-logo.png */; };
 		4A6EAA221A92B0EC007ADFF8 /* pinterest-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */; };
-		4A6EAA231A92B0EC007ADFF8 /* pinterest-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1C1A92B0EC007ADFF8 /* pinterest-logo.png */; };
 		4A6EAA241A92B0EC007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */; };
-		4A6EAA251A92B0EC007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */; };
 		4AA5BB341AC0487500CE458A /* ZSSNetworkQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5BB331AC0487500CE458A /* ZSSNetworkQuerier.m */; };
 		4AA5BB371AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5BB361AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.m */; };
 		4AC2B2011AC0648A006B2EEE /* ZSSNetworkSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2B1FF1AC0648A006B2EEE /* ZSSNetworkSelectCell.m */; };
@@ -92,22 +85,12 @@
 		4ADB73C21A94307500BB053D /* Checkmark-33.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BC1A94307500BB053D /* Checkmark-33.png */; };
 		4ADB73C31A94307500BB053D /* Checkmark-66.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BD1A94307500BB053D /* Checkmark-66.png */; };
 		4ADB73C41A94307500BB053D /* Checkmark-99.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BE1A94307500BB053D /* Checkmark-99.png */; };
-		C9BCACEC690E305B28BBD8D4 /* libPods-Get Short UsernamesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A71EB76E6522D65924C399C /* libPods-Get Short UsernamesTests.a */; };
-		DE763BD5020C045F51CBDA95 /* libPods-Get Short Usernames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC2A2885A5532690F977725 /* libPods-Get Short Usernames.a */; };
+		8A081AF137F5AF7E32595036 /* libPods-Get Short Usernames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7440ADF92BDA8898962290 /* libPods-Get Short Usernames.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4A0378EF1A92A413000D5B7C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A0378CD1A92A412000D5B7C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A0378D41A92A412000D5B7C;
-			remoteInfo = "Get Short Usernames";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1281F4DACB9D04259C957572 /* Pods-Get Short UsernamesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short UsernamesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short UsernamesTests/Pods-Get Short UsernamesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1FE7CAE41E574B6F093BE6DB /* libPods-Get Short UsernamesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Get Short UsernamesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0378D51A92A412000D5B7C /* Usernames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Usernames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0378D91A92A412000D5B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0378DA1A92A412000D5B7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -115,7 +98,6 @@
 		4A0378DD1A92A412000D5B7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4A0378E51A92A412000D5B7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4A0378E81A92A412000D5B7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4A0378EE1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Usernames.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0378F31A92A413000D5B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0378F41A92A413000D5B7C /* Get_Short_UsernamesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Get_Short_UsernamesTests.m; sourceTree = "<group>"; };
 		4A12A3951A92B69900255534 /* UIColor+Flat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Flat.h"; sourceTree = "<group>"; };
@@ -204,9 +186,8 @@
 		4ADB73BC1A94307500BB053D /* Checkmark-33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark-33.png"; path = "images/icons/Checkmark-33.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73BD1A94307500BB053D /* Checkmark-66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark-66.png"; path = "images/icons/Checkmark-66.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73BE1A94307500BB053D /* Checkmark-99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark-99.png"; path = "images/icons/Checkmark-99.png"; sourceTree = SOURCE_ROOT; };
-		5BC2A2885A5532690F977725 /* libPods-Get Short Usernames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Get Short Usernames.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A71EB76E6522D65924C399C /* libPods-Get Short UsernamesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Get Short UsernamesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85422DE9F116E552BA43C7C9 /* Pods-Get Short Usernames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short Usernames.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short Usernames/Pods-Get Short Usernames.release.xcconfig"; sourceTree = "<group>"; };
+		8D7440ADF92BDA8898962290 /* libPods-Get Short Usernames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Get Short Usernames.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D491E524F833C3F4F060B9 /* Pods-Get Short UsernamesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short UsernamesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short UsernamesTests/Pods-Get Short UsernamesTests.release.xcconfig"; sourceTree = "<group>"; };
 		FFA06A8E52BBB22393803699 /* Pods-Get Short Usernames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short Usernames.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short Usernames/Pods-Get Short Usernames.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,15 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE763BD5020C045F51CBDA95 /* libPods-Get Short Usernames.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4A0378EB1A92A413000D5B7C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C9BCACEC690E305B28BBD8D4 /* libPods-Get Short UsernamesTests.a in Frameworks */,
+				8A081AF137F5AF7E32595036 /* libPods-Get Short Usernames.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +207,8 @@
 		18BC671BB4AE0A4069025870 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5BC2A2885A5532690F977725 /* libPods-Get Short Usernames.a */,
-				6A71EB76E6522D65924C399C /* libPods-Get Short UsernamesTests.a */,
+				8D7440ADF92BDA8898962290 /* libPods-Get Short Usernames.a */,
+				1FE7CAE41E574B6F093BE6DB /* libPods-Get Short UsernamesTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				4A0378D51A92A412000D5B7C /* Usernames.app */,
-				4A0378EE1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,9 +402,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A0378D41A92A412000D5B7C /* Usernames.temp_caseinsensitive_rename */ = {
+		4A0378D41A92A412000D5B7C /* Get Short Usernames */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_rename" */;
+			buildConfigurationList = 4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Get Short Usernames" */;
 			buildPhases = (
 				49961130D346789048E839ED /* Check Pods Manifest.lock */,
 				4A0378D11A92A412000D5B7C /* Sources */,
@@ -444,30 +416,10 @@
 			);
 			dependencies = (
 			);
-			name = Usernames.temp_caseinsensitive_rename;
+			name = "Get Short Usernames";
 			productName = "Get Short Usernames";
 			productReference = 4A0378D51A92A412000D5B7C /* Usernames.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4A0378ED1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4A0378FB1A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_renameTests" */;
-			buildPhases = (
-				E53A07615F5E321BF40C6844 /* Check Pods Manifest.lock */,
-				4A0378EA1A92A413000D5B7C /* Sources */,
-				4A0378EB1A92A413000D5B7C /* Frameworks */,
-				4A0378EC1A92A413000D5B7C /* Resources */,
-				CB9B01F1E2D8C6A84085796C /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4A0378F01A92A413000D5B7C /* PBXTargetDependency */,
-			);
-			name = Usernames.temp_caseinsensitive_renameTests;
-			productName = "Get Short UsernamesTests";
-			productReference = 4A0378EE1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -481,10 +433,6 @@
 					4A0378D41A92A412000D5B7C = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 9EFTW5NYHY;
-					};
-					4A0378ED1A92A413000D5B7C = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 4A0378D41A92A412000D5B7C;
 					};
 				};
 			};
@@ -501,8 +449,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A0378D41A92A412000D5B7C /* Usernames.temp_caseinsensitive_rename */,
-				4A0378ED1A92A413000D5B7C /* Usernames.temp_caseinsensitive_renameTests */,
+				4A0378D41A92A412000D5B7C /* Get Short Usernames */,
 			);
 		};
 /* End PBXProject section */
@@ -579,17 +526,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A0378EC1A92A413000D5B7C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A6EAA251A92B0EC007ADFF8 /* twitter-logo.png in Resources */,
-				4A6EAA1F1A92B0EC007ADFF8 /* github-logo.png in Resources */,
-				4A6EAA211A92B0EC007ADFF8 /* instagram-logo.png in Resources */,
-				4A6EAA231A92B0EC007ADFF8 /* pinterest-logo.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -623,36 +559,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get Short Usernames/Pods-Get Short Usernames-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CB9B01F1E2D8C6A84085796C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get Short UsernamesTests/Pods-Get Short UsernamesTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E53A07615F5E321BF40C6844 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -677,25 +583,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A0378EA1A92A413000D5B7C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A6EAA0D1A92A6C2007ADFF8 /* ZSSCloudQuerier.m in Sources */,
-				4A0378F51A92A413000D5B7C /* Get_Short_UsernamesTests.m in Sources */,
-				4A12A3A91A92E48400255534 /* RKDropdownAlert.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4A0378F01A92A413000D5B7C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A0378D41A92A412000D5B7C /* Usernames.temp_caseinsensitive_rename */;
-			targetProxy = 4A0378EF1A92A413000D5B7C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4A0378E71A92A412000D5B7C /* LaunchScreen.xib */ = {
@@ -814,42 +702,6 @@
 			};
 			name = Release;
 		};
-		4A0378FC1A92A413000D5B7C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1281F4DACB9D04259C957572 /* Pods-Get Short UsernamesTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Get Short UsernamesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = Usernames.temp_caseinsensitive_renameTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Short Usernames.app/Get Short Usernames";
-			};
-			name = Debug;
-		};
-		4A0378FD1A92A413000D5B7C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90D491E524F833C3F4F060B9 /* Pods-Get Short UsernamesTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Get Short UsernamesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = Usernames.temp_caseinsensitive_renameTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Short Usernames.app/Get Short Usernames";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -862,20 +714,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_rename" */ = {
+		4A0378F81A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Get Short Usernames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A0378F91A92A413000D5B7C /* Debug */,
 				4A0378FA1A92A413000D5B7C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4A0378FB1A92A413000D5B7C /* Build configuration list for PBXNativeTarget "Usernames.temp_caseinsensitive_renameTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A0378FC1A92A413000D5B7C /* Debug */,
-				4A0378FD1A92A413000D5B7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

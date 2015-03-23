@@ -10,7 +10,6 @@
 
 @interface ZSSNetworkQuerier ()
 
-@property (nonatomic, strong) NSArray *allNetworkNames;
 
 @end
 

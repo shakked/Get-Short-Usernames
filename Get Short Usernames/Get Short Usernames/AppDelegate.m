@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ZSSNetworkTableViewController.h"
-
+#import "ZSSNetworkSettingsTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ZSSNetworkTableViewController *ntvc = [[ZSSNetworkTableViewController alloc] init];
+    ZSSNetworkSettingsTableViewController *ntvc = [[ZSSNetworkSettingsTableViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ntvc];
     
     self.window.rootViewController = nav;

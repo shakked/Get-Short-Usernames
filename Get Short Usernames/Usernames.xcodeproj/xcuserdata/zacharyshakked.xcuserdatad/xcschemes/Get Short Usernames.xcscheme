@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
                BuildableName = "Usernames.app"
-               BlueprintName = "Usernames.temp_caseinsensitive_rename"
+               BlueprintName = "Get Short Usernames"
                ReferencedContainer = "container:Usernames.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A0378ED1A92A413000D5B7C"
                BuildableName = "Usernames.temp_caseinsensitive_renameTests.xctest"
-               BlueprintName = "Usernames.temp_caseinsensitive_renameTests"
+               BlueprintName = "Get Short UsernamesTests"
                ReferencedContainer = "container:Usernames.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,7 +48,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A0378ED1A92A413000D5B7C"
                BuildableName = "Usernames.temp_caseinsensitive_renameTests.xctest"
-               BlueprintName = "Usernames.temp_caseinsensitive_renameTests"
+               BlueprintName = "Get Short UsernamesTests"
                ReferencedContainer = "container:Usernames.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
             BuildableName = "Usernames.app"
-            BlueprintName = "Usernames.temp_caseinsensitive_rename"
+            BlueprintName = "Get Short Usernames"
             ReferencedContainer = "container:Usernames.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,12 +72,13 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
             BuildableName = "Usernames.app"
-            BlueprintName = "Usernames.temp_caseinsensitive_rename"
+            BlueprintName = "Get Short Usernames"
             ReferencedContainer = "container:Usernames.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -90,12 +91,13 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A0378D41A92A412000D5B7C"
             BuildableName = "Usernames.app"
-            BlueprintName = "Usernames.temp_caseinsensitive_rename"
+            BlueprintName = "Get Short Usernames"
             ReferencedContainer = "container:Usernames.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -99,7 +99,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (UIImage *)getLogoForNetwork:(NSString *)network {
-#warning Ugliest method ever
     UIImage *logo;
     if ([network isEqualToString:@"Instagram"]) {
         logo = [UIImage imageNamed:@"instagram.png"];
