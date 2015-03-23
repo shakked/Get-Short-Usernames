@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *networkIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *checkImageView;
+@property (nonatomic, strong) void (^infoButtonPressedBlock)(void);
 
 
 @end

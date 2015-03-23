@@ -20,4 +20,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)networkIconButtonPressed:(id)sender {
+    self.infoButtonPressedBlock();
+}
 @end
