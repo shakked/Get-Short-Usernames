@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ZSSNetworkTableViewController.h"
 #import "ZSSNetworkSettingsTableViewController.h"
+#import "ZSSSearchUsernameTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,8 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ZSSNetworkSettingsTableViewController *ntvc = [[ZSSNetworkSettingsTableViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ntvc];
+    ZSSSearchUsernameTableViewController *sutvc = [[ZSSSearchUsernameTableViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sutvc];
     
     self.window.rootViewController = nav;
     

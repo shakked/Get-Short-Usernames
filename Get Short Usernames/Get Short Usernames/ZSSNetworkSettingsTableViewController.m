@@ -18,6 +18,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 @interface ZSSNetworkSettingsTableViewController ()
 
 @property (nonatomic, strong) NSArray *allNetworkNames;
+@property (nonatomic, strong) NSMutableArray *selectedNetworks;
 
 @end
 
@@ -39,24 +40,28 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (void)configureNavBar {
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor cloudsColor],
-                                                                    NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:26.0]};
+                                                                    NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:22.0]};
     [self configureNavBarTitle];
     [self configureNavBarButtons];
 }
 
 - (void)configureNavBarTitle {
-    self.navigationItem.title = @"Pick Your Networks";
+    self.navigationItem.title = @"Select";
 }
 
 - (void)configureNavBarButtons {
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                      target:self
                                                                                      action:@selector(cancel)];
+    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                  target:self
+                                                                                  action:@selector(done)];
     self.navigationItem.leftBarButtonItem = cancelBarButton;
+    self.navigationItem.rightBarButtonItem = doneBarButton;
 }
 
 - (void)configureTableView {
@@ -81,17 +86,37 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZSSNetworkSelectCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     NSString *networkName = self.allNetworkNames[indexPath.row];
     cell.nameLabel.text = networkName;
-    [cell.logoButton setBackgroundImage:[self getLogoForNetwork:networkName] forState:UIControlStateNormal];
+    [cell.logoButton setImage:[self getLogoForNetwork:networkName] forState:UIControlStateNormal];
+    cell.logoButton.imageView.layer.masksToBounds = YES;
+    cell.logoButton.imageView.layer.cornerRadius = 25.0;
+    cell.selectionStyle =UITableViewCellSelectionStyleNone;
+    if ([self.selectedNetworks containsObject:networkName]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     [self setBlocksForCell:cell forNetwork:networkName];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    ZSSNetworkSelectCell *cell = (ZSSNetworkSelectCell *)[tableView cellForRowAtIndexPath:indexPath];
+    NSString *selectedNetwork = self.allNetworkNames[indexPath.row];
+    if ([self.selectedNetworks containsObject:selectedNetwork]) {
+        [self.selectedNetworks removeObject:selectedNetwork];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        [self.selectedNetworks addObject:selectedNetwork];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
 }
 
 - (void)showPreviousView {
@@ -131,7 +156,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     } else if ([network isEqualToString:@"EtsyShop"]) {
         logo = [UIImage imageNamed:@"etsy.png"];
     } else if ([network isEqualToString:@"EtsyPeople"]) {
-        logo = [UIImage imageNamed:@"etsy,png"];
+        logo = [UIImage imageNamed:@"etsy.png"];
     } else if ([network isEqualToString:@"AboutMe"]) {
         logo = [UIImage imageNamed:@"aboutme.png"];
     } else if ([network isEqualToString:@"KickAssTo"]) {
@@ -148,7 +173,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
         logo = [UIImage imageNamed:@"vimeo.png"];
     } else if ([network isEqualToString:@"LifeHacker"]) {
         logo = [UIImage imageNamed:@"lifehacker.png"];
-    } else if ([network isEqualToString:@"WikiAnswer"]) {
+    } else if ([network isEqualToString:@"WikiAnswers"]) {
         logo = [UIImage imageNamed:@"WikipediaW.png"];
     } else if ([network isEqualToString:@"SoundCloud"]) {
         logo = [UIImage imageNamed:@"soundcloud.png"];
@@ -170,10 +195,22 @@ static NSString *CELL_IDENTIFIER = @"cell";
     
 }
 
+- (void)done {
+    for (NSString *networkName in self.selectedNetworks) {
+        [[ZSSNetworkQuerier sharedQuerier] addNetwork:networkName];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
         _allNetworkNames = [[ZSSNetworkQuerier sharedQuerier] allNetworkNames];
+        _selectedNetworks = [[ZSSNetworkQuerier sharedQuerier] currentSavedNetworks];
     }
     return self;
 }

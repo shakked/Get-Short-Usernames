@@ -49,6 +49,9 @@
 		4A6EAA241A92B0EC007ADFF8 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6EAA1D1A92B0EC007ADFF8 /* twitter-logo.png */; };
 		4AA5BB341AC0487500CE458A /* ZSSNetworkQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5BB331AC0487500CE458A /* ZSSNetworkQuerier.m */; };
 		4AA5BB371AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5BB361AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.m */; };
+		4AB2F1ED1AC18D0B0066090A /* Settings Filled-99.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB2F1EA1AC18D0B0066090A /* Settings Filled-99.png */; };
+		4AB2F1EE1AC18D0B0066090A /* Settings Filled-66.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB2F1EB1AC18D0B0066090A /* Settings Filled-66.png */; };
+		4AB2F1EF1AC18D0B0066090A /* Settings Filled-33-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB2F1EC1AC18D0B0066090A /* Settings Filled-33-2.png */; };
 		4AC2B2011AC0648A006B2EEE /* ZSSNetworkSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2B1FF1AC0648A006B2EEE /* ZSSNetworkSelectCell.m */; };
 		4AC2B2021AC0648A006B2EEE /* ZSSNetworkSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2B2001AC0648A006B2EEE /* ZSSNetworkSelectCell.xib */; };
 		4AC2B2051AC06966006B2EEE /* ebay.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2B2041AC06966006B2EEE /* ebay.png */; };
@@ -148,6 +151,9 @@
 		4AA5BB331AC0487500CE458A /* ZSSNetworkQuerier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSNetworkQuerier.m; sourceTree = "<group>"; };
 		4AA5BB351AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSNetworkSettingsTableViewController.h; sourceTree = "<group>"; };
 		4AA5BB361AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSNetworkSettingsTableViewController.m; sourceTree = "<group>"; };
+		4AB2F1EA1AC18D0B0066090A /* Settings Filled-99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings Filled-99.png"; sourceTree = "<group>"; };
+		4AB2F1EB1AC18D0B0066090A /* Settings Filled-66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings Filled-66.png"; sourceTree = "<group>"; };
+		4AB2F1EC1AC18D0B0066090A /* Settings Filled-33-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings Filled-33-2.png"; sourceTree = "<group>"; };
 		4AC2B1FE1AC0648A006B2EEE /* ZSSNetworkSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSNetworkSelectCell.h; sourceTree = "<group>"; };
 		4AC2B1FF1AC0648A006B2EEE /* ZSSNetworkSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSNetworkSelectCell.m; sourceTree = "<group>"; };
 		4AC2B2001AC0648A006B2EEE /* ZSSNetworkSelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSNetworkSelectCell.xib; sourceTree = "<group>"; };
@@ -384,6 +390,9 @@
 				4A49DB031A92EE7B00C17370 /* Settings.png */,
 				4A49DB041A92EE7B00C17370 /* Settings@2x.png */,
 				4A49DB051A92EE7B00C17370 /* Settings@3x.png */,
+				4AB2F1EA1AC18D0B0066090A /* Settings Filled-99.png */,
+				4AB2F1EB1AC18D0B0066090A /* Settings Filled-66.png */,
+				4AB2F1EC1AC18D0B0066090A /* Settings Filled-33-2.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -469,6 +478,7 @@
 				4AC2B22E1AC07F0B006B2EEE /* verge.png in Resources */,
 				4AC2B2181AC069F2006B2EEE /* googleplus.png in Resources */,
 				4AC2B2231AC06AB3006B2EEE /* gravatar.jpg in Resources */,
+				4AB2F1EF1AC18D0B0066090A /* Settings Filled-33-2.png in Resources */,
 				4A49DAF01A92E9B800C17370 /* Keys.plist in Resources */,
 				4AC2B2271AC06B22006B2EEE /* kickasstorrents.png in Resources */,
 				4A6EAA071A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib in Resources */,
@@ -487,6 +497,7 @@
 				4ADB73C11A94307500BB053D /* Cancel-99.png in Resources */,
 				4A49DAF41A92EDB900C17370 /* AppStoreIcon.jpg in Resources */,
 				4AC2B21C1AC069F2006B2EEE /* spotify.png in Resources */,
+				4AB2F1ED1AC18D0B0066090A /* Settings Filled-99.png in Resources */,
 				4AC2B2171AC069F2006B2EEE /* flickr.png in Resources */,
 				4A49DAF61A92EDB900C17370 /* AppStoreIcon@3x.jpg in Resources */,
 				4AC2B2211AC06A76006B2EEE /* imgur.png in Resources */,
@@ -505,6 +516,7 @@
 				4AC2B2051AC06966006B2EEE /* ebay.png in Resources */,
 				4AC2B2251AC06ACD006B2EEE /* aboutme.png in Resources */,
 				4A32DD4C1A95950800449F95 /* github.png in Resources */,
+				4AB2F1EE1AC18D0B0066090A /* Settings Filled-66.png in Resources */,
 				4A32DD4F1A95950800449F95 /* tumblr.png in Resources */,
 				4AC2B21B1AC069F2006B2EEE /* soundcloud.png in Resources */,
 				4AC2B2321AC07F0B006B2EEE /* lifehacker.png in Resources */,

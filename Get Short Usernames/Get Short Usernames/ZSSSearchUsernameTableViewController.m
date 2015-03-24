@@ -10,7 +10,7 @@
 #import "UIColor+Flat.h"
 #import "ZSSSearchTableViewCell.h"
 #import "ZSSCloudQuerier.h"
-
+#import "ZSSNetworkSettingsTableViewController.h"
 
 static NSString *MESSAGE_CELL_CLASS = @"ZSSSearchTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
@@ -56,12 +56,12 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self.searchBar.placeholder = @"Enter Desired Username";
     self.navigationItem.title = @"Search a Username";
     
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.bounds = CGRectMake(0, 0, 33, 33);
-    [backButton setBackgroundImage:[UIImage imageNamed:@"BackButton"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(showPreviousView) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = backBarButton;
+    UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    settingsButton.bounds = CGRectMake(0, 0, 25, 25);
+    [settingsButton setBackgroundImage:[UIImage imageNamed:@"SettingsIcon"] forState:UIControlStateNormal];
+    [settingsButton addTarget:self action:@selector(showSettingsView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *settingsBarButton = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
+    self.navigationItem.leftBarButtonItem = settingsBarButton;
 }
 
 - (void)configureTableView {
@@ -223,8 +223,10 @@ static NSString *CELL_IDENTIFIER = @"cell";
     [self.searchBar resignFirstResponder];
 }
 
-- (void)showPreviousView {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)showSettingsView {
+    ZSSNetworkSettingsTableViewController *nstvc = [[ZSSNetworkSettingsTableViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nstvc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 

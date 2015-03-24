@@ -15,5 +15,6 @@
 - (BOOL)removeNetwork:(NSString *)networkName;
 
 @property (nonatomic, strong) NSArray *allNetworkNames;
+- (NSMutableArray *)currentSavedNetworks;
 
 @end
