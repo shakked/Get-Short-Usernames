@@ -10,10 +10,10 @@
 
 @interface ZSSSearchTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *networkIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *checkImageView;
 @property (nonatomic, strong) void (^infoButtonPressedBlock)(void);
+@property (weak, nonatomic) IBOutlet UIButton *logoButton;
 
 
 @end

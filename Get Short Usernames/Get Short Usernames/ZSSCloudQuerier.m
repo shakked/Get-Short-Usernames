@@ -31,6 +31,76 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     return sharedQuerier;
 }
 
+- (NSString *)urlForNetwork:(NSString *)network forUsername:(NSString *)username{
+    NSString *url;
+    if ([network isEqualToString:@"Instagram"]) {
+        url = [NSString stringWithFormat:@"http://instagram.com/%@", username];
+    } else if ([network isEqualToString:@"Github"]) {
+        url = [NSString stringWithFormat:@"http://github.com/%@", username];
+    } else if ([network isEqualToString:@"Pinterest"]) {
+        url = [NSString stringWithFormat:@"https://www.pinterest.com/%@", username];
+    } else if ([network isEqualToString:@"Twitter"]) {
+        url = [NSString stringWithFormat:@"https://twitter.com/%@", username];
+    } else if ([network isEqualToString:@"Tumblr"]) {
+        [NSString stringWithFormat:@"http://%@.tumblr.com", username];
+    } else if ([network isEqualToString:@"Ebay"]) {
+        url = [NSString stringWithFormat:@"http://www.ebay.com/usr/%@", username];
+    } else if ([network isEqualToString:@"Dribbble"]) {
+        url = [NSString stringWithFormat:@"https://dribbble.com/%@", username];
+    } else if ([network isEqualToString:@"Behance"]) {
+        url = [NSString stringWithFormat:@"https://www.behance.net/%@", username];
+    } else if ([network isEqualToString:@"Youtube"]) {
+        url = [NSString stringWithFormat:@"https://www.youtube.com/user/%@", username];
+    } else if ([network isEqualToString:@"GooglePlus"]) {
+        url = [NSString stringWithFormat:@"https://plus.google.com/+%@", username];
+    } else if ([network isEqualToString:@"Reddit"]) {
+        url = [NSString stringWithFormat:@"http://www.reddit.com/user/%@", username];
+    } else if ([network isEqualToString:@"Imgur"]) {
+        url = [NSString stringWithFormat:@"http://imgur.com/user/%@", username];
+    } else if ([network isEqualToString:@"Wordpress"]) {
+        url = [NSString stringWithFormat:@"https://%@.wordpress.com", username];
+    } else if ([network isEqualToString:@"Gravatar"]) {
+        url = [NSString stringWithFormat:@"http://en.gravatar.com/profiles/%@", username];
+    } else if ([network isEqualToString:@"EtsyShop"]) {
+        url = [NSString stringWithFormat:@"https://www.etsy.com/shop/%@", username];
+    } else if ([network isEqualToString:@"EtsyPeople"]) {
+        url = [NSString stringWithFormat:@"https://www.etsy.com/people/%@", username];
+    } else if ([network isEqualToString:@"AboutMe"]) {
+        url = [NSString stringWithFormat:@"https://about.me/%@", username];
+    } else if ([network isEqualToString:@"KickAssTo"]) {
+        url = [NSString stringWithFormat:@"http://kickass.to/user/%@/", username];
+    } else if ([network isEqualToString:@"ThePirateBay"]) {
+        url = [NSString stringWithFormat:@"https://thepiratebay.se/user/%@", username];
+    } else if ([network isEqualToString:@"Flickr"]) {
+        url = [NSString stringWithFormat:@"https://www.flickr.com/photos/%@", username];
+    } else if ([network isEqualToString:@"DeviantArt"]) {
+        url = [NSString stringWithFormat:@"http://%@.deviantart.com", username];
+    } else if ([network isEqualToString:@"Twitch"]) {
+        url = [NSString stringWithFormat:@"http://www.twitch.tv/%@", username];
+    } else if ([network isEqualToString:@"Vimeo"]) {
+        url = [NSString stringWithFormat:@"https://vimeo.com/%@", username];
+    } else if ([network isEqualToString:@"LifeHacker"]) {
+        url = [NSString stringWithFormat:@"http://%@.kinja.com", username];
+    } else if ([network isEqualToString:@"WikiAnswers"]) {
+        url = [NSString stringWithFormat:@"https://wiki.answers.com/Q/User:%@", username];
+    } else if ([network isEqualToString:@"SoundCloud"]) {
+        url = [NSString stringWithFormat:@"https://soundcloud.com/%@", username];
+    } else if ([network isEqualToString:@"IGN"]) {
+        url = [NSString stringWithFormat:@"http://people.ign.com/%@", username];
+    } else if ([network isEqualToString:@"OkCupid"]) {
+        url = [NSString stringWithFormat:@"http://www.okcupid.com/profile/%@", username];
+    } else if ([network isEqualToString:@"TheVerge"]) {
+        url = [NSString stringWithFormat:@"http://www.theverge.com/users/%@", username];
+    } else if ([network isEqualToString:@"KickStarter"]) {
+        url = [NSString stringWithFormat:@"https://www.kickstarter.com/profile/%@", username];
+    } else if ([network isEqualToString:@"Spotify"]) {
+        url = [NSString stringWithFormat:@"https://play.spotify.com/user/%@", username];
+    }
+    return url;
+
+}
+
+
 
 - (void)getUsernamesForNetwork:(NSString *)networkName withCompletion:(void (^)(NSArray *, NSError *))completion {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

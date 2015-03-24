@@ -11,6 +11,8 @@
 #import "ZSSSearchTableViewCell.h"
 #import "ZSSCloudQuerier.h"
 #import "ZSSNetworkSettingsTableViewController.h"
+#import "ZSSNetworkQuerier.h"
+#import "UIImage+Logos.h"
 
 static NSString *MESSAGE_CELL_CLASS = @"ZSSSearchTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
@@ -19,6 +21,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) NSString *currentUsername;
+@property (nonatomic, strong) NSArray *selectedNetworks;
 
 @property (nonatomic) BOOL isInstagramAvailable;
 @property (nonatomic) BOOL isGithubAvailable;
@@ -38,6 +41,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleColor];
+    self.selectedNetworks = [[ZSSNetworkQuerier sharedQuerier] selectedNetworks];
 }
 - (void)configureViews {
     [self configureNavBar];
@@ -54,7 +58,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.searchBar.placeholder = @"Enter Desired Username";
-    self.navigationItem.title = @"Search a Username";
+    self.navigationItem.title = @"Search";
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     settingsButton.bounds = CGRectMake(0, 0, 25, 25);
@@ -83,7 +87,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 5;
+    return [self.selectedNetworks count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -92,7 +96,8 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZSSSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
-    [self configureNetworksOfCell:cell forIndexPath:indexPath];
+    NSString *networkName = self.selectedNetworks[indexPath.row];
+    [self configureCell:cell forIndexPath:indexPath andNetworkName:networkName];
     cell.usernameLabel.text = self.currentUsername;
     return cell;
 }
@@ -102,56 +107,9 @@ static NSString *CELL_IDENTIFIER = @"cell";
     
 }
 
-- (void)configureNetworksOfCell:(ZSSSearchTableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-            cell.networkIconImageView.image = [UIImage imageNamed:@"instagram-icon.png"];
-            if (self.isInstagramAvailable) {
-                cell.checkImageView.image = [UIImage imageNamed:@"CheckmarkIcon"];
-            } else {
-                cell.checkImageView.image = [UIImage imageNamed:@"XIcon"];
-            }
-            break;
-            
-        case 1:
-            cell.networkIconImageView.image = [UIImage imageNamed:@"github-icon.png"];
-            if (self.isGithubAvailable) {
-                cell.checkImageView.image = [UIImage imageNamed:@"CheckmarkIcon"];
-            } else {
-                cell.checkImageView.image = [UIImage imageNamed:@"XIcon"];
-            }
-            break;
-            
-        case 2:
-            cell.networkIconImageView.image = [UIImage imageNamed:@"pinterest-icon.png"];
-            if (self.isPinterestAvailable) {
-                cell.checkImageView.image = [UIImage imageNamed:@"CheckmarkIcon"];
-            } else {
-                cell.checkImageView.image = [UIImage imageNamed:@"XIcon"];
-            }
-            break;
-        
-        case 3:
-            cell.networkIconImageView.image = [UIImage imageNamed:@"twitter-icon.png"];
-            if (self.isTwitterAvailable) {
-                cell.checkImageView.image = [UIImage imageNamed:@"CheckmarkIcon"];
-            } else {
-                cell.checkImageView.image = [UIImage imageNamed:@"XIcon"];
-            }
-            break;
-            
-        case 4:
-            cell.networkIconImageView.image = [UIImage imageNamed:@"tumblr-icon.png"];
-            if (self.isTumblrAvailable) {
-                cell.checkImageView.image = [UIImage imageNamed:@"CheckmarkIcon"];
-            } else {
-                cell.checkImageView.image = [UIImage imageNamed:@"XIcon"];
-            }
-            break;
-            
-        default:
-            break;
-    }
+- (void)configureCell:(ZSSSearchTableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath andNetworkName:(NSString *)networkName {
+    [cell.logoButton setImage:[UIImage logoForNetwork:networkName] forState:UIControlStateNormal];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {

@@ -23,10 +23,12 @@
     return sharedQuerier;
 }
 
+
+
 - (BOOL)addNetwork:(NSString *)networkName {
     BOOL isValidNetworkAddition = [self isValidNetworkAddition:networkName];
     if (isValidNetworkAddition) {
-        NSMutableArray *savedNetworks = [self currentSavedNetworks];
+        NSMutableArray *savedNetworks = [self selectedNetworks];
         [savedNetworks addObject:networkName];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -40,7 +42,7 @@
 - (BOOL)removeNetwork:(NSString *)networkName {
     BOOL isValidNetworkRemoval = [self isValidNetworkRemoval:networkName];
     if (isValidNetworkRemoval) {
-        NSMutableArray *savedNetworks = [self currentSavedNetworks];
+        NSMutableArray *savedNetworks = [self selectedNetworks];
         [savedNetworks removeObject:networkName];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -52,7 +54,7 @@
     }
 }
 
-- (NSMutableArray *)currentSavedNetworks {
+- (NSMutableArray *)selectedNetworks {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *savedNetworks = [defaults arrayForKey:@"savedNetworks"];
     return [NSMutableArray arrayWithArray:savedNetworks];
@@ -67,7 +69,7 @@
 }
 
 - (BOOL)isValidNetworkAddition:(NSString *)networkName {
-    NSArray *currentSavedNetworks = [self currentSavedNetworks];
+    NSArray *currentSavedNetworks = [self selectedNetworks];
     if ([currentSavedNetworks containsObject:networkName] || ![self isValidNetworkName:networkName]) {
         return NO;
     } else {
@@ -76,7 +78,7 @@
 }
 
 - (BOOL)isValidNetworkRemoval:(NSString *)networkName {
-    NSArray *currentSavedNetworks = [self currentSavedNetworks];
+    NSArray *currentSavedNetworks = [self selectedNetworks];
     if(![currentSavedNetworks containsObject:networkName] || ![self isValidNetworkName:networkName]) {
         return NO;
     } else {
