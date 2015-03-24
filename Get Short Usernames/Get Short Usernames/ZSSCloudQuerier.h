@@ -21,7 +21,7 @@
 - (void)checkEbayForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkDribbbleForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkBehanceForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkYouTubeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
+- (void)checkYoutubeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkGooglePlusForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkRedditForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkImgurForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
@@ -30,7 +30,7 @@
 - (void)checkEtsyShopForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkEtsyPeopleForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkAboutMeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkKickassToForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
+- (void)checkKickAssToForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkThePirateBayForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkFlickrForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkDeviantArtForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;

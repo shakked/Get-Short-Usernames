@@ -123,6 +123,29 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     }];
 }
 
+- (void)checkNetworkURL:(NSString *)networkURL forUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    [manager GET:networkURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"response:%@", responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSInteger statusCode = operation.response.statusCode;
+        
+        switch (statusCode) {
+            case 201:
+                completion(NO, nil);
+                break;
+            case 404:
+                completion(YES, nil);
+            default:
+                completion(NO, error);
+                break;
+        }
+    }];}
+
 - (void)checkInstagramForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -288,7 +311,7 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     [op start];
 }
 
-- (void)checkYouTubeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+- (void)checkYoutubeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.securityPolicy.allowInvalidCertificates = YES;
@@ -432,7 +455,7 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     [op start];
 }
 
-- (void)checkKickassToForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+- (void)checkKickAssToForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.securityPolicy.allowInvalidCertificates = YES;
