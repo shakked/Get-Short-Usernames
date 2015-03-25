@@ -21,6 +21,6 @@
 }
 
 - (IBAction)networkIconButtonPressed:(id)sender {
-    self.infoButtonPressedBlock();
+
 }
 @end

@@ -23,6 +23,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 @property (nonatomic, strong) NSString *currentUsername;
 @property (nonatomic, strong) NSArray *selectedNetworks;
 @property (nonatomic, strong) NSMutableArray *availableNetworks;
+@property (nonatomic, strong) NSDate *timeOfLastRequest;
 
 @property (nonatomic) BOOL isInstagramAvailable;
 @property (nonatomic) BOOL isGithubAvailable;
@@ -69,6 +70,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleColor];
     self.selectedNetworks = [[ZSSNetworkQuerier sharedQuerier] selectedNetworks];
+    [self.tableView reloadData];
 }
 - (void)configureViews {
     [self configureNavBar];
@@ -85,7 +87,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.searchBar.placeholder = @"Enter Desired Username";
-    self.navigationItem.title = @"Search";
+    self.navigationItem.titleView = self.searchBar;
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     settingsButton.bounds = CGRectMake(0, 0, 25, 25);
@@ -93,6 +95,10 @@ static NSString *CELL_IDENTIFIER = @"cell";
     [settingsButton addTarget:self action:@selector(showSettingsView) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *settingsBarButton = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
     self.navigationItem.leftBarButtonItem = settingsBarButton;
+    
+    UIBarButtonItem *searchBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchBarButtonPressed)];
+    self.navigationItem.rightBarButtonItem = searchBarButton;
+    
 }
 
 - (void)configureTableView {
@@ -108,17 +114,10 @@ static NSString *CELL_IDENTIFIER = @"cell";
     return 1;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return self.searchBar;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     return [self.selectedNetworks count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44; // The height of the search bar
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -126,6 +125,8 @@ static NSString *CELL_IDENTIFIER = @"cell";
     NSString *networkName = self.selectedNetworks[indexPath.row];
     [self configureCell:cell forIndexPath:indexPath andNetworkName:networkName];
     cell.usernameLabel.text = self.currentUsername;
+    cell.logoButton.imageView.layer.masksToBounds = YES;
+    cell.logoButton.imageView.layer.cornerRadius = 25;
     if ([self.availableNetworks containsObject:networkName]) {
         cell.checkImageView.image = [UIImage imageNamed:@"CheckmarkIcon"];
     } else {
@@ -145,13 +146,24 @@ static NSString *CELL_IDENTIFIER = @"cell";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self startSearching:searchBar.text];
+}
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self resetNetworkBools];
     self.currentUsername = searchText;
     [self.tableView reloadData];
     [self.searchBar becomeFirstResponder];
     
-    [self startSearching:searchText];
+    if ([self.timeOfLastRequest timeIntervalSinceDate:[NSDate date]] >= 2) {
+        [self startSearching:searchText];
+        self.timeOfLastRequest = [NSDate date];
+    }
+}
+
+- (void)searchBarButtonPressed {
+    [self startSearching:self.searchBar.text];
 }
 
 - (void)startSearching:(NSString *)searchText {
@@ -284,6 +296,17 @@ static NSString *CELL_IDENTIFIER = @"cell";
             }
             [self.tableView beginUpdates];
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Imgur"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Wordpress"]) {
+        [[ZSSCloudQuerier sharedQuerier] checkWordpressForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Wordpress"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Wordpress"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
             [self.tableView endUpdates];
         }];
     }
@@ -537,6 +560,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self = [super init];
     if (self) {
         _availableNetworks = [[NSMutableArray alloc] init];
+        _timeOfLastRequest = [NSDate dateWithTimeIntervalSince1970:0];
     }
     return self;
 }

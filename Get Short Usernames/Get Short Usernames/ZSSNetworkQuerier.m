@@ -40,7 +40,7 @@
 }
 
 - (BOOL)removeNetwork:(NSString *)networkName {
-    BOOL isValidNetworkRemoval = [self isValidNetworkRemoval:networkName];
+    BOOL isValidNetworkRemoval = [self.allNetworkNames containsObject:networkName];
     if (isValidNetworkRemoval) {
         NSMutableArray *savedNetworks = [self selectedNetworks];
         [savedNetworks removeObject:networkName];
@@ -54,9 +54,20 @@
     }
 }
 
+- (void)saveNetworks:(NSArray *)networks {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:networks forKey:@"savedNetworks"];
+    [defaults synchronize];
+}
+
 - (NSMutableArray *)selectedNetworks {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *savedNetworks = [defaults arrayForKey:@"savedNetworks"];
+    if (!savedNetworks || savedNetworks.count == 0) {
+        savedNetworks = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr"];
+        [defaults setValue:savedNetworks forKey:@"savedNetworks"];
+        [defaults synchronize];
+    }
     return [NSMutableArray arrayWithArray:savedNetworks];
 }
 
@@ -95,7 +106,7 @@
 }
 
 - (void)configureAllNetworkNames {
-    _allNetworkNames = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr", @"Ebay", @"Dribbble", @"Behance", @"Youtube", @"GooglePlus", @"Reddit", @"Imgur", @"Wordpress", @"Gravatar", @"EtsyShop", @"EtsyPeople", @"AboutMe", @"KickAssTo", @"ThePirateBay", @"Flickr", @"DeviantArt", @"Twitch", @"Vimeo", @"LifeHacker", @"WikiAnswers", @"SoundCloud", @"IGN", @"OkCupid", @"TheVerge", @"KickStarter", @"Spotify"];
+    _allNetworkNames = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr", @"Ebay", @"Dribbble", @"Behance", @"Youtube", @"GooglePlus", @"Reddit", @"Imgur", @"Wordpress", @"Gravatar", @"EtsyShop", @"EtsyPeople", @"AboutMe", @"KickAssTo", @"Flickr", @"DeviantArt", @"Twitch", @"Vimeo", @"LifeHacker", @"WikiAnswers", @"SoundCloud", @"OkCupid", @"KickStarter"];
 }
 
 - (instancetype)init {

@@ -17,5 +17,5 @@
 
 @property (nonatomic, strong) NSArray *allNetworkNames;
 - (NSMutableArray *)selectedNetworks;
-
+- (void)saveNetworks:(NSArray *)networks;
 @end

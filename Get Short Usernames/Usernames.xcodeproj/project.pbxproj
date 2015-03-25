@@ -697,11 +697,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Get Short Usernames/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Usernames;
-				PROVISIONING_PROFILE = "2a980103-bff3-477a-9ced-520e83be1be5";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -711,12 +712,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zachary Shakked (9EFTW5NYHY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Get Short Usernames/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Usernames;
-				PROVISIONING_PROFILE = "2453e03d-0fb1-49b8-bcaf-94ba28ca25fa";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

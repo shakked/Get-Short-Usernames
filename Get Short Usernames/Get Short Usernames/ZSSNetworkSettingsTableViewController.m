@@ -130,9 +130,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (void)done {
-    for (NSString *networkName in self.selectedNetworks) {
-        [[ZSSNetworkQuerier sharedQuerier] addNetwork:networkName];
-    }
+    [[ZSSNetworkQuerier sharedQuerier] saveNetworks:self.selectedNetworks];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
