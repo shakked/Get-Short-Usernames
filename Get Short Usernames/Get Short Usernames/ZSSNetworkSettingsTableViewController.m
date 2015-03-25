@@ -94,17 +94,10 @@ static NSString *CELL_IDENTIFIER = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZSSNetworkSelectCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     NSString *networkName = self.allNetworkNames[indexPath.row];
-    cell.nameLabel.text = networkName;
-    [cell.logoButton setImage:[UIImage logoForNetwork:networkName] forState:UIControlStateNormal];
-    cell.logoButton.imageView.layer.masksToBounds = YES;
-    cell.logoButton.imageView.layer.cornerRadius = 25.0;
+
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
-    if ([self.selectedNetworks containsObject:networkName]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    [self setBlocksForCell:cell forNetwork:networkName];
+    
+    [self configureCell:cell forNetwork:networkName];
     return cell;
 }
 
@@ -118,6 +111,47 @@ static NSString *CELL_IDENTIFIER = @"cell";
         [self.selectedNetworks addObject:selectedNetwork];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
+}
+
+- (void)configureCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
+    [self setBlocksForCell:cell forNetwork:networkName];
+    [self configureNameLabelForCell:cell forNetwork:networkName];
+    [self configureLogoButtonForCell:cell forNetwork:networkName];
+    [self configureAccessoryTypeForCell:cell forNetwork:networkName];
+    [self configureCellForRelevantPurchaseStatus:cell forNetwork:networkName];
+    
+}
+
+- (void)configureNameLabelForCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
+    cell.nameLabel.text = networkName;
+}
+
+- (void)configureLogoButtonForCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
+    [cell.logoButton setImage:[UIImage logoForNetwork:networkName] forState:UIControlStateNormal];
+    cell.logoButton.imageView.layer.masksToBounds = YES;
+    cell.logoButton.imageView.layer.cornerRadius = 25.0;
+}
+
+- (void)configureAccessoryTypeForCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
+    BOOL isNetworkSelected = [self isNetworkSelected:networkName];
+    if (isNetworkSelected) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
+}
+
+- (BOOL)isNetworkSelected:(NSString *)networkName {
+    if ([self.selectedNetworks containsObject:networkName]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (void)configureCellForRelevantPurchaseStatus:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
+    
 }
 
 - (void)showPreviousView {

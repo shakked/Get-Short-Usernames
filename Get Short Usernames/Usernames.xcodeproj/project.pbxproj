@@ -89,6 +89,7 @@
 		4ADB73C21A94307500BB053D /* Checkmark-33.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BC1A94307500BB053D /* Checkmark-33.png */; };
 		4ADB73C31A94307500BB053D /* Checkmark-66.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BD1A94307500BB053D /* Checkmark-66.png */; };
 		4ADB73C41A94307500BB053D /* Checkmark-99.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73BE1A94307500BB053D /* Checkmark-99.png */; };
+		4AE792721AC30CC9009C1788 /* ZSSPurchaseQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE792711AC30CC9009C1788 /* ZSSPurchaseQuerier.m */; };
 		8A081AF137F5AF7E32595036 /* libPods-Get Short Usernames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7440ADF92BDA8898962290 /* libPods-Get Short Usernames.a */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +196,8 @@
 		4ADB73BC1A94307500BB053D /* Checkmark-33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark-33.png"; path = "images/icons/Checkmark-33.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73BD1A94307500BB053D /* Checkmark-66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark-66.png"; path = "images/icons/Checkmark-66.png"; sourceTree = SOURCE_ROOT; };
 		4ADB73BE1A94307500BB053D /* Checkmark-99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark-99.png"; path = "images/icons/Checkmark-99.png"; sourceTree = SOURCE_ROOT; };
+		4AE792701AC30CC9009C1788 /* ZSSPurchaseQuerier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSPurchaseQuerier.h; sourceTree = "<group>"; };
+		4AE792711AC30CC9009C1788 /* ZSSPurchaseQuerier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSPurchaseQuerier.m; sourceTree = "<group>"; };
 		85422DE9F116E552BA43C7C9 /* Pods-Get Short Usernames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short Usernames.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short Usernames/Pods-Get Short Usernames.release.xcconfig"; sourceTree = "<group>"; };
 		8D7440ADF92BDA8898962290 /* libPods-Get Short Usernames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Get Short Usernames.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D491E524F833C3F4F060B9 /* Pods-Get Short UsernamesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short UsernamesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short UsernamesTests/Pods-Get Short UsernamesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,10 +254,10 @@
 				4A0378DD1A92A412000D5B7C /* AppDelegate.m */,
 				4A6EAA0A1A92A6C2007ADFF8 /* ZSSCloudQuerier.h */,
 				4A6EAA0B1A92A6C2007ADFF8 /* ZSSCloudQuerier.m */,
-				4AB2F1F01AC19A350066090A /* UIImage+Logos.h */,
-				4AB2F1F11AC19A350066090A /* UIImage+Logos.m */,
 				4AA5BB321AC0487500CE458A /* ZSSNetworkQuerier.h */,
 				4AA5BB331AC0487500CE458A /* ZSSNetworkQuerier.m */,
+				4AE792701AC30CC9009C1788 /* ZSSPurchaseQuerier.h */,
+				4AE792711AC30CC9009C1788 /* ZSSPurchaseQuerier.m */,
 				4A0378E51A92A412000D5B7C /* Images.xcassets */,
 				4A0378E71A92A412000D5B7C /* LaunchScreen.xib */,
 				4A0378D81A92A412000D5B7C /* Supporting Files */,
@@ -266,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				4A49DAEF1A92E9B800C17370 /* Keys.plist */,
+				4AB2F1F01AC19A350066090A /* UIImage+Logos.h */,
+				4AB2F1F11AC19A350066090A /* UIImage+Logos.m */,
 				4A12A3A61A92E48400255534 /* RKDropdownAlert.h */,
 				4A12A3A71A92E48400255534 /* RKDropdownAlert.m */,
 				4A12A3951A92B69900255534 /* UIColor+Flat.h */,
@@ -590,6 +595,7 @@
 				4A6EA9F81A92A668007ADFF8 /* ZSSUsernameTableViewController.m in Sources */,
 				4A6EA9F51A92A650007ADFF8 /* ZSSNetworkTableViewController.m in Sources */,
 				4A6EAA041A92A6A4007ADFF8 /* ZSSNetworkTableViewCell.m in Sources */,
+				4AE792721AC30CC9009C1788 /* ZSSPurchaseQuerier.m in Sources */,
 				4ADB73AD1A942C0000BB053D /* ZSSSearchTableViewCell.m in Sources */,
 				4AB2F1F21AC19A350066090A /* UIImage+Logos.m in Sources */,
 				4A12A3A81A92E48400255534 /* RKDropdownAlert.m in Sources */,
