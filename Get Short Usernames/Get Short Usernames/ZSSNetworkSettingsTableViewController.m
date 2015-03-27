@@ -21,6 +21,8 @@ static NSString *CELL_IDENTIFIER = @"cell";
 @property (nonatomic, strong) NSArray *allNetworkNames;
 @property (nonatomic, strong) NSMutableArray *selectedNetworks;
 
+@property (nonatomic) BOOL didUnlockAllNetworks;
+
 @end
 
 @implementation ZSSNetworkSettingsTableViewController
@@ -94,19 +96,21 @@ static NSString *CELL_IDENTIFIER = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZSSNetworkSelectCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     NSString *networkName = self.allNetworkNames[indexPath.row];
-
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
-    
     [self configureCell:cell forNetwork:networkName];
+
+    if (indexPath.row >= 5) {
+        [self configurePremiumCell:cell forNetwork:networkName];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZSSNetworkSelectCell *cell = (ZSSNetworkSelectCell *)[tableView cellForRowAtIndexPath:indexPath];
     NSString *selectedNetwork = self.allNetworkNames[indexPath.row];
-    if (indexPath.row > 5) {
+    if (!self.didUnlockAllNetworks && indexPath.row >= 5) {
         ZSSPurchaseViewController *pvc = [[ZSSPurchaseViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:pvc];
+        [self presentViewController:pvc animated:YES completion:nil];
     }else{
         if ([self.selectedNetworks containsObject:selectedNetwork]) {
             [self.selectedNetworks removeObject:selectedNetwork];
@@ -118,13 +122,19 @@ static NSString *CELL_IDENTIFIER = @"cell";
     }
 }
 
+- (void)configurePremiumCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
+    if (!self.didUnlockAllNetworks) {
+        cell.logoButton.alpha = 0.3;
+    }
+    
+}
+
 - (void)configureCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
     [self setBlocksForCell:cell forNetwork:networkName];
     [self configureNameLabelForCell:cell forNetwork:networkName];
     [self configureLogoButtonForCell:cell forNetwork:networkName];
     [self configureAccessoryTypeForCell:cell forNetwork:networkName];
     [self configureCellForRelevantPurchaseStatus:cell forNetwork:networkName];
-    
 }
 
 - (void)configureNameLabelForCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
@@ -135,6 +145,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     [cell.logoButton setImage:[UIImage logoForNetwork:networkName] forState:UIControlStateNormal];
     cell.logoButton.imageView.layer.masksToBounds = YES;
     cell.logoButton.imageView.layer.cornerRadius = 25.0;
+    cell.logoButton.alpha = 1.0;
 }
 
 - (void)configureAccessoryTypeForCell:(ZSSNetworkSelectCell *)cell forNetwork:(NSString *)networkName {
@@ -182,6 +193,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     if (self) {
         _allNetworkNames = [[ZSSNetworkQuerier sharedQuerier] allNetworkNames];
         _selectedNetworks = [[ZSSNetworkQuerier sharedQuerier] selectedNetworks];
+        _didUnlockAllNetworks = [[ZSSNetworkQuerier sharedQuerier] didUnlockAllNetworks];
     }
     return self;
 }

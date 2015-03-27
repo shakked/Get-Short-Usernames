@@ -148,6 +148,15 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [self startSearching:searchBar.text];
+    
+}
+
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@" "]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {

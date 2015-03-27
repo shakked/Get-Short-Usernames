@@ -23,7 +23,15 @@
     return sharedQuerier;
 }
 
-
+- (BOOL)didUnlockAllNetworks {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL didUnlockAllNetworks = [defaults boolForKey:@"com.zacharyshakked.ia2p.UnlockAllNetworks"];
+    if (didUnlockAllNetworks) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 - (BOOL)addNetwork:(NSString *)networkName {
     BOOL isValidNetworkAddition = [self isValidNetworkAddition:networkName];

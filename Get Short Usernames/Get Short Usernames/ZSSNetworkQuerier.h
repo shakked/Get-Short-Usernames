@@ -11,7 +11,7 @@
 @interface ZSSNetworkQuerier : NSObject
 
 + (instancetype)sharedQuerier;
-
+- (BOOL)didUnlockAllNetworks;
 - (BOOL)addNetwork:(NSString *)networkName;
 - (BOOL)removeNetwork:(NSString *)networkName;
 

@@ -16,7 +16,7 @@
     static ZSSIAPHelper *sharedInstance;
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
-                                      @"com.zacharyshakked.Usernames.UnlockAllNetworks",
+                                      @"com.zacharyshakked.iap.UnlockAllNetworks",
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });
