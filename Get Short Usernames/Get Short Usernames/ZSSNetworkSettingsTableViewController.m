@@ -12,7 +12,7 @@
 #import "ZSSNetworkQuerier.h"
 #import "ZSSNetworkSelectCell.h"
 #import "UIImage+Logos.h"
-
+#import "ZSSPurchaseViewController.h"
 static NSString *MESSAGE_CELL_CLASS = @"ZSSNetworkSelectCell";
 static NSString *CELL_IDENTIFIER = @"cell";
 
@@ -104,12 +104,17 @@ static NSString *CELL_IDENTIFIER = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZSSNetworkSelectCell *cell = (ZSSNetworkSelectCell *)[tableView cellForRowAtIndexPath:indexPath];
     NSString *selectedNetwork = self.allNetworkNames[indexPath.row];
-    if ([self.selectedNetworks containsObject:selectedNetwork]) {
-        [self.selectedNetworks removeObject:selectedNetwork];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    } else {
-        [self.selectedNetworks addObject:selectedNetwork];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (indexPath.row > 5) {
+        ZSSPurchaseViewController *pvc = [[ZSSPurchaseViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:pvc];
+    }else{
+        if ([self.selectedNetworks containsObject:selectedNetwork]) {
+            [self.selectedNetworks removeObject:selectedNetwork];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        } else {
+            [self.selectedNetworks addObject:selectedNetwork];
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
     }
 }
 

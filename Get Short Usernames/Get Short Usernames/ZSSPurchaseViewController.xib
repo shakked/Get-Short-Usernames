@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZSSPurchaseViewController">
+            <connections>
+                <outlet property="purchaseButton" destination="kkT-Ju-nKJ" id="kqG-QY-aQP"/>
+                <outlet property="restoreButton" destination="ilR-3d-IQI" id="Dr2-Wn-NI4"/>
+                <outlet property="showAllNetworksButton" destination="9wF-m3-iqh" id="uCc-qK-tB5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkT-Ju-nKJ">
+                    <rect key="frame" x="268" y="323" width="64" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="IOe-ME-EeI"/>
+                        <constraint firstAttribute="height" constant="30" id="JGE-mI-owG"/>
+                    </constraints>
+                    <state key="normal" title="Purchase">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="purchaseButtonPressed:" destination="-1" eventType="touchUpInside" id="KuL-P0-R29"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-3d-IQI">
+                    <rect key="frame" x="274" y="392" width="53" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Y5u-zS-YfO"/>
+                        <constraint firstAttribute="width" constant="53" id="dhZ-JP-qhR"/>
+                    </constraints>
+                    <state key="normal" title="Restore">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="restoreButtonPressed:" destination="-1" eventType="touchUpInside" id="6OT-Dv-hQN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wF-m3-iqh">
+                    <rect key="frame" x="218" y="455" width="165" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="165" id="CcJ-rd-fRn"/>
+                        <constraint firstAttribute="height" constant="30" id="teF-0f-5YW"/>
+                    </constraints>
+                    <state key="normal" title="Show All Networks">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showAllNetworksButtonPressed:" destination="-1" eventType="touchUpInside" id="Z4v-0u-ybO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9wF-m3-iqh" firstAttribute="top" secondItem="ilR-3d-IQI" secondAttribute="bottom" constant="33" id="0pc-OM-2FW"/>
+                <constraint firstItem="ilR-3d-IQI" firstAttribute="top" secondItem="kkT-Ju-nKJ" secondAttribute="bottom" constant="39" id="AFC-SS-VEI"/>
+                <constraint firstAttribute="bottom" secondItem="9wF-m3-iqh" secondAttribute="bottom" constant="115" id="E7g-Lo-qBR"/>
+                <constraint firstAttribute="centerX" secondItem="kkT-Ju-nKJ" secondAttribute="centerX" id="NQ6-0d-OZa"/>
+                <constraint firstAttribute="centerX" secondItem="9wF-m3-iqh" secondAttribute="centerX" id="ZYF-Sj-2jc"/>
+                <constraint firstAttribute="centerX" secondItem="ilR-3d-IQI" secondAttribute="centerX" id="kuI-qd-hYh"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

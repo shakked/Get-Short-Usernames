@@ -10,6 +10,8 @@
 #import "ZSSNetworkTableViewController.h"
 #import "ZSSNetworkSettingsTableViewController.h"
 #import "ZSSSearchUsernameTableViewController.h"
+#import "ZSSIAPHelper.h"
+
 @interface AppDelegate ()
 
 @end
@@ -20,6 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [ZSSIAPHelper sharedHelper];
     
     ZSSSearchUsernameTableViewController *sutvc = [[ZSSSearchUsernameTableViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sutvc];

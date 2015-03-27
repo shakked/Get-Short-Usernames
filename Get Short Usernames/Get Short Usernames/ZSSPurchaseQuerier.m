@@ -19,14 +19,12 @@
     return sharedQuerier;
 }
 
-
-
 - (instancetype)initPrivate {
     self = [super init];
     if (self) {
 
     }
-    return self;
+return self;
 }
 
 @end

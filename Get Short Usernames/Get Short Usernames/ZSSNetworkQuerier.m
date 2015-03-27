@@ -106,7 +106,7 @@
 }
 
 - (void)configureAllNetworkNames {
-    _allNetworkNames = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr", @"Ebay", @"Dribbble", @"Behance", @"Youtube", @"GooglePlus", @"Reddit", @"Imgur", @"Wordpress", @"Gravatar", @"EtsyShop", @"EtsyPeople", @"AboutMe", @"KickAssTo", @"Flickr", @"DeviantArt", @"Twitch", @"Vimeo", @"LifeHacker", @"WikiAnswers", @"SoundCloud", @"OkCupid", @"KickStarter"];
+    _allNetworkNames = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr", @"Ebay", @"Dribbble", @"Behance", @"Youtube", @"GooglePlus", @"Reddit", @"Imgur", @"Wordpress", @"Gravatar", @"EtsyShop", @"EtsyPeople", @"AboutMe", @"KickAssTo", @"Flickr", @"DeviantArt", @"Twitch", @"Vimeo", @"SoundCloud", @"OkCupid", @"KickStarter"];
 }
 
 - (instancetype)init {
