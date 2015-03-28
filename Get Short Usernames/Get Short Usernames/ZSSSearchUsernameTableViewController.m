@@ -13,17 +13,20 @@
 #import "ZSSNetworkSettingsTableViewController.h"
 #import "ZSSNetworkQuerier.h"
 #import "UIImage+Logos.h"
-
+#import "ZSSSearchOperation.h"
+#import "ZSSSearchOperationDelegate.h"
 static NSString *MESSAGE_CELL_CLASS = @"ZSSSearchTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
 
-@interface ZSSSearchUsernameTableViewController () <UISearchBarDelegate, UIScrollViewDelegate>
+@interface ZSSSearchUsernameTableViewController () <UISearchBarDelegate, UIScrollViewDelegate, ZSSSearchOperationDelegate>
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) NSString *currentUsername;
 @property (nonatomic, strong) NSArray *selectedNetworks;
 @property (nonatomic, strong) NSMutableArray *availableNetworks;
 @property (nonatomic, strong) NSDate *timeOfLastRequest;
+
+@property (nonatomic, strong) NSOperationQueue *searchOperationQueue;
 
 @property (nonatomic) BOOL isInstagramAvailable;
 @property (nonatomic) BOOL isGithubAvailable;
@@ -56,7 +59,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
 @property (nonatomic) BOOL isTheVergeAvailable;
 @property (nonatomic) BOOL isKickStarterAvailable;
 @property (nonatomic) BOOL isSpotifyAvailable;
-
 
 @end
 
@@ -162,15 +164,36 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    [self resetNetworkBools];
+    
     self.currentUsername = searchText;
     [self.tableView reloadData];
     [self.searchBar becomeFirstResponder];
+    
+    [self searchStringAfterDelay:searchText];
     
     if ([self.timeOfLastRequest timeIntervalSinceDate:[NSDate date]] >= 2) {
         [self startSearching:searchText];
         self.timeOfLastRequest = [NSDate date];
     }
+}
+
+- (void)searchStringAfterDelay:(NSString *)searchText {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(searchStringAfterDelay:) object:nil];
+    [self performSelector:@selector(searchAfterDelay:) withObject:searchText afterDelay:0.25];
+}
+
+- (void)searchAfterDelay:(id)searchText {
+    [self.searchOperationQueue cancelAllOperations];
+    ZSSSearchOperation *searchOperation = [[ZSSSearchOperation alloc] init];
+    searchOperation.searchText = (NSString *)searchText;
+    searchOperation.delegate = self;
+    [self.searchOperationQueue addOperation:searchOperation];
+    
+#warning SET THE SEARCH TEXT
+}
+
+- (void)searchOperationDidFinish {
+    //UPDATE UI!
 }
 
 - (void)searchBarButtonPressed {
@@ -572,6 +595,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     if (self) {
         _availableNetworks = [[NSMutableArray alloc] init];
         _timeOfLastRequest = [NSDate dateWithTimeIntervalSince1970:0];
+        _searchOperationQueue = [[NSOperationQueue alloc] init];
     }
     return self;
 }

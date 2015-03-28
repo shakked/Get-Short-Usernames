@@ -87,6 +87,7 @@
 		4AC2B2371AC08321006B2EEE /* okcupid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2B2361AC08321006B2EEE /* okcupid.png */; };
 		4ACF03A01AC4CEF600AF5D69 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF039F1AC4CEF600AF5D69 /* IAPHelper.m */; };
 		4ACF03A31AC4D02E00AF5D69 /* ZSSIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF03A21AC4D02E00AF5D69 /* ZSSIAPHelper.m */; };
+		4ADAD62C1AC6741400F9EA76 /* ZSSSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAD62B1AC6741400F9EA76 /* ZSSSearchOperation.m */; };
 		4ADB73AD1A942C0000BB053D /* ZSSSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB73AB1A942C0000BB053D /* ZSSSearchTableViewCell.m */; };
 		4ADB73AE1A942C0000BB053D /* ZSSSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73AC1A942C0000BB053D /* ZSSSearchTableViewCell.xib */; };
 		4ADB73BF1A94307500BB053D /* Cancel-33.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB73B91A94307500BB053D /* Cancel-33.png */; };
@@ -225,6 +226,9 @@
 		4ACF039F1AC4CEF600AF5D69 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		4ACF03A11AC4D02E00AF5D69 /* ZSSIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSIAPHelper.h; sourceTree = "<group>"; };
 		4ACF03A21AC4D02E00AF5D69 /* ZSSIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSIAPHelper.m; sourceTree = "<group>"; };
+		4ADAD62A1AC6741400F9EA76 /* ZSSSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSSearchOperation.h; sourceTree = "<group>"; };
+		4ADAD62B1AC6741400F9EA76 /* ZSSSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSSearchOperation.m; sourceTree = "<group>"; };
+		4ADAD62D1AC6848E00F9EA76 /* ZSSSearchOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSSearchOperationDelegate.h; sourceTree = "<group>"; };
 		4ADB73AA1A942C0000BB053D /* ZSSSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSSearchTableViewCell.h; sourceTree = "<group>"; };
 		4ADB73AB1A942C0000BB053D /* ZSSSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSSearchTableViewCell.m; sourceTree = "<group>"; };
 		4ADB73AC1A942C0000BB053D /* ZSSSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSSearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -396,6 +400,7 @@
 			children = (
 				4A49DB091A9371F000C17370 /* ZSSSearchUsernameTableViewController.h */,
 				4A49DB0A1A9371F000C17370 /* ZSSSearchUsernameTableViewController.m */,
+				4ADAD62D1AC6848E00F9EA76 /* ZSSSearchOperationDelegate.h */,
 				4A1969EC1AC33FA4001AA6E9 /* ZSSPurchaseViewController.h */,
 				4A1969ED1AC33FA4001AA6E9 /* ZSSPurchaseViewController.m */,
 				4A1969EE1AC33FA4001AA6E9 /* ZSSPurchaseViewController.xib */,
@@ -403,6 +408,8 @@
 				4ACF039F1AC4CEF600AF5D69 /* IAPHelper.m */,
 				4ACF03A11AC4D02E00AF5D69 /* ZSSIAPHelper.h */,
 				4ACF03A21AC4D02E00AF5D69 /* ZSSIAPHelper.m */,
+				4ADAD62A1AC6741400F9EA76 /* ZSSSearchOperation.h */,
+				4ADAD62B1AC6741400F9EA76 /* ZSSSearchOperation.m */,
 			);
 			name = "Search VC";
 			sourceTree = "<group>";
@@ -711,6 +718,7 @@
 				4A12A3A81A92E48400255534 /* RKDropdownAlert.m in Sources */,
 				4AC2B2011AC0648A006B2EEE /* ZSSNetworkSelectCell.m in Sources */,
 				4A0378DE1A92A412000D5B7C /* AppDelegate.m in Sources */,
+				4ADAD62C1AC6741400F9EA76 /* ZSSSearchOperation.m in Sources */,
 				4A1969EF1AC33FA4001AA6E9 /* ZSSPurchaseViewController.m in Sources */,
 				4A0378DB1A92A412000D5B7C /* main.m in Sources */,
 				4A49DB0B1A9371F000C17370 /* ZSSSearchUsernameTableViewController.m in Sources */,
