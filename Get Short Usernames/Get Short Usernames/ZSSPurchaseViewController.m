@@ -14,7 +14,7 @@
 #import "UIImage+Logos.h"
 #import <CoreMotion/CoreMotion.h>
 
-#define kUpdateInterval (1.0f / 60.0f)
+#define kUpdateInterval (1.0f / 120.0f)
 
 @interface ZSSPurchaseViewController ()<SKPaymentTransactionObserver, SKProductsRequestDelegate>
 
@@ -27,6 +27,15 @@
 @property (nonatomic, strong) UICollisionBehavior *collision;
 @property (nonatomic, strong) UIDynamicItemBehavior *itemBehavaior;
 
+@property (assign, nonatomic) CGPoint currentPoint;
+@property (assign, nonatomic) CGPoint previousPoint;
+@property (assign, nonatomic) CGFloat pacmanXVelocity;
+@property (assign, nonatomic) CGFloat pacmanYVelocity;
+@property (assign, nonatomic) CGFloat angle;
+@property (assign, nonatomic) CMAcceleration acceleration;
+@property (strong, nonatomic) CMMotionManager  *motionManager;
+@property (strong, nonatomic) NSOperationQueue *queue;
+@property (strong, nonatomic) NSDate *lastUpdateTime;
 
 @end
 
@@ -35,7 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureViews];
-
+    [self configureMotionManager];
+    
     [[ZSSIAPHelper sharedHelper] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             _products = products;
@@ -105,10 +115,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+    [self configureMotionManager];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.motionManager stopDeviceMotionUpdates];
 }
 
 - (void)productPurchased:(NSNotification *)notification {
@@ -149,9 +161,44 @@
 }
 
 - (void)configureMotionManager {
-
+    
+    self.motionManager = [[CMMotionManager alloc]  init];
+    self.queue         = [[NSOperationQueue alloc] init];
+    
+    self.motionManager.accelerometerUpdateInterval = kUpdateInterval;
+    
+    [self.motionManager startDeviceMotionUpdatesToQueue:self.queue withHandler:^(CMDeviceMotion *motion, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        }
+        
+        CGFloat x = motion.gravity.x;
+        CGFloat y = motion.gravity.y;
+        CGPoint p = CGPointMake(x,y);
+        
+        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        if (orientation == UIInterfaceOrientationLandscapeLeft) {
+            float t = p.x;
+            p.x = 0 - p.y;
+            p.y = t;
+        } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+            float t = p.x;
+            p.x = p.y;
+            p.y = 0 - t;
+        } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+            p.x *= -1;
+            p.y *= -1;
+        }
+        
+        CGVector v = CGVectorMake(p.x, 0 - p.y);
+        self.gravity.gravityDirection = v;
+    }];
 }
 
-
-
+- (void)movePacman {
+    CGFloat newAngle = (self.pacmanXVelocity + self.pacmanYVelocity) * M_PI * 4;
+    self.angle += newAngle * kUpdateInterval;
+    self.gravity.angle = self.angle;
+    
+}
 @end

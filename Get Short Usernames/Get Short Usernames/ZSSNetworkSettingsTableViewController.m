@@ -35,6 +35,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)configureViews {
@@ -47,12 +48,13 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor cloudsColor],
-                                                                    NSFontAttributeName : [UIFont fontWithName:@"Avenir" size:22.0]};
+                                                                    NSFontAttributeName : [UIFont fontWithName:@"Avenir-Heavy" size:22.0]};
     [self configureNavBarTitle];
     [self configureNavBarButtons];
 }
 
 - (void)configureNavBarTitle {
+    
     self.navigationItem.title = @"Select";
 }
 
@@ -60,9 +62,13 @@ static NSString *CELL_IDENTIFIER = @"cell";
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                      target:self
                                                                                      action:@selector(cancel)];
+    [cancelBarButton setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"Avenir-Light" size:18.0]} forState:UIControlStateNormal];
+
     UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                   target:self
-                                                                                  action:@selector(done)];
+                                                                                   action:@selector(done)];
+    [doneBarButton setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"Avenir-Heavy" size:18.0]
+                                            } forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = cancelBarButton;
     self.navigationItem.rightBarButtonItem = doneBarButton;
 }

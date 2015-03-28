@@ -99,6 +99,19 @@
 		8A081AF137F5AF7E32595036 /* libPods-Get Short Usernames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D7440ADF92BDA8898962290 /* libPods-Get Short Usernames.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4A1952D01AC5E09D00C9F544 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1281F4DACB9D04259C957572 /* Pods-Get Short UsernamesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Short UsernamesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Short UsernamesTests/Pods-Get Short UsernamesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1FE7CAE41E574B6F093BE6DB /* libPods-Get Short UsernamesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Get Short UsernamesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +132,16 @@
 		4A12A39E1A92D5FF00255534 /* tumblr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tumblr-logo.png"; sourceTree = "<group>"; };
 		4A12A3A61A92E48400255534 /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		4A12A3A71A92E48400255534 /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
+		4A1952AF1AC5E09D00C9F544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1952B01AC5E09D00C9F544 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4A1952B11AC5E09D00C9F544 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		4A1952B21AC5E09D00C9F544 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		4A1952B41AC5E09D00C9F544 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		4A1952B51AC5E09D00C9F544 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		4A1952B71AC5E09D00C9F544 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4A1952C11AC5E09D00C9F544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1952C31AC5E09D00C9F544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		4A1952C51AC5E09D00C9F544 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4A1969E81AC33F43001AA6E9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4A1969EC1AC33FA4001AA6E9 /* ZSSPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSPurchaseViewController.h; sourceTree = "<group>"; };
 		4A1969ED1AC33FA4001AA6E9 /* ZSSPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSPurchaseViewController.m; sourceTree = "<group>"; };
@@ -249,6 +272,8 @@
 			children = (
 				4A0378D71A92A412000D5B7C /* Get Short Usernames */,
 				4A0378F11A92A413000D5B7C /* Get Short UsernamesTests */,
+				4A1952AD1AC5E09D00C9F544 /* Usernames WatchKit Extension */,
+				4A1952BF1AC5E09D00C9F544 /* Usernames WatchKit App */,
 				4A0378D61A92A412000D5B7C /* Products */,
 				F7B86E0B0D712F3B273DCDC1 /* Pods */,
 				18BC671BB4AE0A4069025870 /* Frameworks */,
@@ -313,6 +338,46 @@
 			isa = PBXGroup;
 			children = (
 				4A0378F31A92A413000D5B7C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A1952AD1AC5E09D00C9F544 /* Usernames WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4A1952B11AC5E09D00C9F544 /* InterfaceController.h */,
+				4A1952B21AC5E09D00C9F544 /* InterfaceController.m */,
+				4A1952B41AC5E09D00C9F544 /* NotificationController.h */,
+				4A1952B51AC5E09D00C9F544 /* NotificationController.m */,
+				4A1952B71AC5E09D00C9F544 /* Images.xcassets */,
+				4A1952AE1AC5E09D00C9F544 /* Supporting Files */,
+			);
+			path = "Usernames WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		4A1952AE1AC5E09D00C9F544 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A1952AF1AC5E09D00C9F544 /* Info.plist */,
+				4A1952B01AC5E09D00C9F544 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A1952BF1AC5E09D00C9F544 /* Usernames WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				4A1952C21AC5E09D00C9F544 /* Interface.storyboard */,
+				4A1952C51AC5E09D00C9F544 /* Images.xcassets */,
+				4A1952C01AC5E09D00C9F544 /* Supporting Files */,
+			);
+			path = "Usernames WatchKit App";
+			sourceTree = "<group>";
+		};
+		4A1952C01AC5E09D00C9F544 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A1952C11AC5E09D00C9F544 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -472,6 +537,7 @@
 				4A0378D21A92A412000D5B7C /* Frameworks */,
 				4A0378D31A92A412000D5B7C /* Resources */,
 				54A7966AA12D252E3AFF6A05 /* Copy Pods Resources */,
+				4A1952D01AC5E09D00C9F544 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -662,6 +728,14 @@
 				4A0378E81A92A412000D5B7C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		4A1952C21AC5E09D00C9F544 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A1952C31AC5E09D00C9F544 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

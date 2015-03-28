@@ -11,6 +11,7 @@
 @interface UIColor (Flat)
 
 + (UIColor *)belizeHoleColor;
++ (UIColor *)turquoiseColor;
 + (UIColor *)cloudsColor;
 + (UIColor *)instagramColor;
 + (UIColor *)pinterestColor;

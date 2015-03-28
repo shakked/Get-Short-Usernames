@@ -25,6 +25,14 @@
                            alpha:1.0];
 }
 
+
++ (UIColor *)turquoiseColor {
+    return [UIColor colorWithRed:26.0/255
+                           green:188.0/255
+                            blue:156.0/255
+                           alpha:1.0];
+}
+
 + (UIColor *)instagramColor {
     return [UIColor colorWithRed:42.0/255
                            green:91.0/255

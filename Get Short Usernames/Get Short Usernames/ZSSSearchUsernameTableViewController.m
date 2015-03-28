@@ -87,6 +87,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.searchBar.placeholder = @"Enter Desired Username";
+
     self.navigationItem.titleView = self.searchBar;
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -125,6 +126,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     NSString *networkName = self.selectedNetworks[indexPath.row];
     [self configureCell:cell forIndexPath:indexPath andNetworkName:networkName];
     cell.usernameLabel.text = self.currentUsername;
+    cell.usernameLabel.font = [UIFont fontWithName:@"Avenir-Black" size:18.0];
     cell.logoButton.imageView.layer.masksToBounds = YES;
     cell.logoButton.imageView.layer.cornerRadius = 25;
     if ([self.availableNetworks containsObject:networkName]) {

@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Notification - Usernames WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Usernames WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>4A0378ED1A92A413000D5B7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A1952BA1AC5E09D00C9F544</key>
 		<dict>
 			<key>primary</key>
 			<true/>
