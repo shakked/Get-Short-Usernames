@@ -12,11 +12,8 @@
 @interface ZSSCloudQuerier : NSObject
 
 + (instancetype)sharedQuerier;
-- (void)getUsernamesForNetwork:(NSString *)networkName withCompletion:(void (^)(NSArray *, NSError *))completion;
-
 - (void)cancelAllOperations;
-@property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
-@property (nonatomic, strong) AFHTTPRequestOperationManager *desktopManager;
+
 
 - (void)checkInstagramForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkGithubForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
@@ -36,18 +33,12 @@
 - (void)checkEtsyPeopleForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkAboutMeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkKickAssToForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkThePirateBayForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkFlickrForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkDeviantArtForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkTwitchForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkVimeoForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkLifeHackerForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkWikiAnswersForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkSoundCloudForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkIGNForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkOkCupidForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkTheVergeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkKickStarterForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkSpotifyForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 
 @end

@@ -13,54 +13,18 @@
 #import "ZSSNetworkSettingsTableViewController.h"
 #import "ZSSNetworkQuerier.h"
 #import "UIImage+Logos.h"
-#import "ZSSSearchOperation.h"
-#import "ZSSSearchOperationDelegate.h"
 #import <AFNetworking.h>
 
 static NSString *MESSAGE_CELL_CLASS = @"ZSSSearchTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
 
-@interface ZSSSearchUsernameTableViewController () <UISearchBarDelegate, UIScrollViewDelegate, ZSSSearchOperationDelegate>
+@interface ZSSSearchUsernameTableViewController () <UISearchBarDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) NSString *currentUsername;
 @property (nonatomic, strong) NSArray *selectedNetworks;
 @property (nonatomic, strong) NSMutableArray *availableNetworks;
-@property (nonatomic, strong) NSDate *timeOfLastRequest;
 
-@property (nonatomic, strong) NSOperationQueue *searchOperationQueue;
-
-@property (nonatomic) BOOL isInstagramAvailable;
-@property (nonatomic) BOOL isGithubAvailable;
-@property (nonatomic) BOOL isPinterestAvailable;
-@property (nonatomic) BOOL isTwitterAvailable;
-@property (nonatomic) BOOL isTumblrAvailable;
-@property (nonatomic) BOOL isEbayAvailable;
-@property (nonatomic) BOOL isDribbbleAvailable;
-@property (nonatomic) BOOL isBehanceAvailable;
-@property (nonatomic) BOOL isYoutubeAvailable;
-@property (nonatomic) BOOL isGooglePlusAvailable;
-@property (nonatomic) BOOL isRedditAvailable;
-@property (nonatomic) BOOL isImgurAvailable;
-@property (nonatomic) BOOL isWordpressAvailable;
-@property (nonatomic) BOOL isGravatarAvailable;
-@property (nonatomic) BOOL isEtsyShopAvailable;
-@property (nonatomic) BOOL isEtsyPeopleAvailable;
-@property (nonatomic) BOOL isAboutMeAvailable;
-@property (nonatomic) BOOL isKickAssToAvailable;
-@property (nonatomic) BOOL isThePirateBayAvailable;
-@property (nonatomic) BOOL isFlickrAvailable;
-@property (nonatomic) BOOL isDeviantArtAvailable;
-@property (nonatomic) BOOL isTwitchAvailable;
-@property (nonatomic) BOOL isVimeoAvailable;
-@property (nonatomic) BOOL isLifeHackerAvailable;
-@property (nonatomic) BOOL isWikiAnswersAvailable;
-@property (nonatomic) BOOL isSoundCloudAvailable;
-@property (nonatomic) BOOL isIGNAvailable;
-@property (nonatomic) BOOL isOkCupidAvailable;
-@property (nonatomic) BOOL isTheVergeAvailable;
-@property (nonatomic) BOOL isKickStarterAvailable;
-@property (nonatomic) BOOL isSpotifyAvailable;
 @property (nonatomic, strong) NSTimer * debounceTimer;
 @property (nonatomic, strong) AFHTTPRequestOperationManager * manager;
 
@@ -93,9 +57,14 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.searchBar.placeholder = @"Enter Desired Username";
-
-    self.navigationItem.titleView = self.searchBar;
+    self.searchBar.tintColor = [UIColor belizeHoleColor];
     
+    self.navigationItem.titleView = self.searchBar;
+
+    [self configureNavBarButtons];
+}
+
+- (void)configureNavBarButtons {
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     settingsButton.bounds = CGRectMake(0, 0, 25, 25);
     [settingsButton setBackgroundImage:[UIImage imageNamed:@"SettingsIcon"] forState:UIControlStateNormal];
@@ -117,13 +86,11 @@ static NSString *CELL_IDENTIFIER = @"cell";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return [self.selectedNetworks count];
 }
 
@@ -173,13 +140,10 @@ static NSString *CELL_IDENTIFIER = @"cell";
     [self.searchBar becomeFirstResponder];
     
     [self.debounceTimer invalidate];
-    self.debounceTimer = nil;
-    
     self.debounceTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(onDebounceTimerFired:) userInfo:nil repeats:NO];
 }
 
 - (void) onDebounceTimerFired: (NSTimer *) timer {
-//observer for the operation queue count, wait for that to go back to zero
     [self.manager.operationQueue cancelAllOperations];
     self.availableNetworks = [[NSMutableArray alloc] initWithArray:@[]];
     [self.tableView reloadData];
@@ -389,17 +353,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
         }];
     }
     
-    if ([self.selectedNetworks containsObject:@"ThePirateBay"]) {
-        [[ZSSCloudQuerier sharedQuerier] checkThePirateBayForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-                [self.availableNetworks addObject:@"ThePirateBay"];
-            }
-            [self.tableView beginUpdates];
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"ThePirateBay"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            [self.tableView endUpdates];
-        }];
-    }
-    
     if ([self.selectedNetworks containsObject:@"Flickr"]) {
         [[ZSSCloudQuerier sharedQuerier] checkFlickrForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
@@ -444,28 +397,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
         }];
     }
     
-    if ([self.selectedNetworks containsObject:@"LifeHacker"]) {
-        [[ZSSCloudQuerier sharedQuerier] checkLifeHackerForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-                [self.availableNetworks addObject:@"LifeHacker"];
-            }
-            [self.tableView beginUpdates];
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"LifeHacker"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            [self.tableView endUpdates];
-        }];
-    }
-    
-    if ([self.selectedNetworks containsObject:@"WikiAnswers"]) {
-        [[ZSSCloudQuerier sharedQuerier] checkWikiAnswersForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-                [self.availableNetworks addObject:@"WikiAnswers"];
-            }
-            [self.tableView beginUpdates];
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"WikiAnswers"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            [self.tableView endUpdates];
-        }];
-    }
-    
     if ([self.selectedNetworks containsObject:@"SoundCloud"]) {
         [[ZSSCloudQuerier sharedQuerier] checkSoundCloudForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
@@ -474,17 +405,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
             }
             [self.tableView beginUpdates];
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"SoundCloud"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            [self.tableView endUpdates];
-        }];
-    }
-    
-    if ([self.selectedNetworks containsObject:@"IGN"]) {
-        [[ZSSCloudQuerier sharedQuerier] checkIGNForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-                [self.availableNetworks addObject:@"IGN"];
-            }
-            [self.tableView beginUpdates];
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"IGN"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
             [self.tableView endUpdates];
         }];
     }
@@ -500,17 +420,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
         }];
     }
     
-    if ([self.selectedNetworks containsObject:@"TheVerge"]) {
-        [[ZSSCloudQuerier sharedQuerier] checkTheVergeForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-                [self.availableNetworks addObject:@"TheVerge"];
-            }
-            [self.tableView beginUpdates];
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"TheVerge"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            [self.tableView endUpdates];
-        }];
-    }
-    
     if ([self.selectedNetworks containsObject:@"KickStarter"]) {
         [[ZSSCloudQuerier sharedQuerier] checkKickStarterForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
@@ -522,53 +431,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
         }];
     }
     
-    if ([self.selectedNetworks containsObject:@"Spotify"]) {
-        [[ZSSCloudQuerier sharedQuerier] checkSpotifyForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-                [self.availableNetworks addObject:@"Spotify"];
-            }
-            [self.tableView beginUpdates];
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Spotify"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            [self.tableView endUpdates];
-        }];
-    }
-}
-
-- (void)resetNetworkBools {
-    [self.availableNetworks removeAllObjects];
-//    self.isInstagramAvailable = NO;
-//    self.isGithubAvailable = NO;
-//    self.isPinterestAvailable = NO;
-//    self.isTwitterAvailable = NO;
-//    self.isTumblrAvailable = NO;
-//    self.isEbayAvailable = NO;
-//    self.isDribbbleAvailable = NO;
-//    self.isBehanceAvailable = NO;
-//    self.isYoutubeAvailable = NO;
-//    self.isGooglePlusAvailable = NO;
-//    self.isRedditAvailable = NO;
-//    self.isImgurAvailable = NO;
-//    self.isWordpressAvailable = NO;
-//    self.isGravatarAvailable = NO;
-//    self.isEtsyShopAvailable = NO;
-//    self.isEtsyPeopleAvailable = NO;
-//    self.isAboutMeAvailable = NO;
-//    self.isKickAssToAvailable = NO;
-//    self.isThePirateBayAvailable = NO;
-//    self.isFlickrAvailable = NO;
-//    self.isDeviantArtAvailable = NO;
-//    self.isTwitchAvailable = NO;
-//    self.isVimeoAvailable = NO;
-//    self.isLifeHackerAvailable = NO;
-//    self.isWikiAnswersAvailable = NO;
-//    self.isSoundCloudAvailable = NO;
-//    self.isIGNAvailable = NO;
-//    self.isOkCupidAvailable = NO;
-//    self.isTheVergeAvailable = NO;
-//    self.isKickStarterAvailable = NO;
-//    self.isSpotifyAvailable = NO;
-//    self.isTumblrAvailable = NO;
-//    self.isTumblrAvailable = NO;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -585,8 +447,6 @@ static NSString *CELL_IDENTIFIER = @"cell";
     self = [super init];
     if (self) {
         _availableNetworks = [[NSMutableArray alloc] init];
-        _timeOfLastRequest = [NSDate dateWithTimeIntervalSince1970:0];
-        _searchOperationQueue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
