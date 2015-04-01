@@ -12,8 +12,6 @@
 
 static NSString * const BaseURLString = @"https://api.parse.com";
 
-
-
 @interface ZSSCloudQuerier () {
     NSString *parseApplicationId;
     NSString *parseRestAPIKey;
@@ -31,6 +29,10 @@ static NSString * const BaseURLString = @"https://api.parse.com";
         sharedQuerier = [[self alloc] initPrivate];
     });
     return sharedQuerier;
+}
+
+- (void)cancelAllOperations {
+    [self.manager.operationQueue cancelAllOperations];
 }
 
 - (NSString *)urlForNetwork:(NSString *)network forUsername:(NSString *)username{
@@ -105,19 +107,17 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 
 
 - (void)getUsernamesForNetwork:(NSString *)networkName withCompletion:(void (^)(NSArray *, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager.requestSerializer setValue:parseApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
-    [manager.requestSerializer setValue:parseRestAPIKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    NSDictionary *jsonDictionary = @{@"network" : networkName,
+     
+    [self.manager.requestSerializer setValue:parseApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
+    [self.manager.requestSerializer setValue:parseRestAPIKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+      NSDictionary *jsonDictionary = @{@"network" : networkName,
                                      @"available" : @YES};
     
     NSString *json = [self getJSONfromDictionary:jsonDictionary];
     NSDictionary *parameters = @{@"where" :json,
                                  @"limit" : @1000};
     
-    [manager GET:@"https://api.parse.com/1/classes/ZSSUsername" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.manager GET:@"https://api.parse.com/1/classes/ZSSUsername" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         completion(responseObject[@"results"], nil);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -126,11 +126,10 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkNetworkURL:(NSString *)networkURL forUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    [manager GET:networkURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     
+     
+      
+    [self.manager GET:networkURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"response:%@", responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -149,13 +148,7 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     }];}
 
 - (void)checkInstagramForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    [manager GET:[NSString stringWithFormat:@"http://instagram.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"response:%@", responseObject);
-        
+    [self.manager GET:[NSString stringWithFormat:@"http://instagram.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSInteger statusCode = operation.response.statusCode;
         
@@ -173,13 +166,7 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkGithubForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    [manager GET:[NSString stringWithFormat:@"http://github.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"response:%@", responseObject);
-        
+    [self.manager GET:[NSString stringWithFormat:@"http://github.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSInteger statusCode = operation.response.statusCode;
         
@@ -197,13 +184,7 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkPinterestForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    [manager GET:[NSString stringWithFormat:@"https://www.pinterest.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"response:%@", responseObject);
-        
+    [self.manager GET:[NSString stringWithFormat:@"https://www.pinterest.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSInteger statusCode = operation.response.statusCode;
         
@@ -221,11 +202,7 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkTumblrForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    [manager GET:[NSString stringWithFormat:@"http://%@.tumblr.com", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.manager GET:[NSString stringWithFormat:@"http://%@.tumblr.com", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"response:%@", responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -244,33 +221,20 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     }];
 }
 
-
-
-
 - (void)checkTwitterForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
     
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.desktopManager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.104 Safari/537.36" forHTTPHeaderField:@"User-Agent"];
+    
+    [self.desktopManager GET:[NSString stringWithFormat:@"https://twitter.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         completion(NO, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
+        completion(YES, error);
     }];
-    [op start];
-
 }
 
 - (void)checkEbayForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:[NSString stringWithFormat:@"http://www.ebay.com/usr/%@",username] parameters:nil
+    [self.manager GET:[NSString stringWithFormat:@"http://www.ebay.com/usr/%@",username] parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
              NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
              if ([html containsString:@"The User ID you entered was not found"]) {
                  completion(YES, nil);
@@ -285,113 +249,103 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkDribbbleForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://dribbble.com/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"https://dribbble.com/%@", username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"the page you were looking"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkBehanceForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.behance.net/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"https://www.behance.net/%@", username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"This page cannot be found"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkYoutubeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
+    [self.desktopManager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.104 Safari/537.36" forHTTPHeaderField:@"User-Agent"];
     
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.youtube.com/user/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.desktopManager GET:[NSString stringWithFormat:@"https://youtube.com/user/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         completion(NO, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
+        completion(YES, error);
     }];
-    [op start];
+    
 }
 
 - (void)checkGooglePlusForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://plus.google.com/+%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"https://plus.google.com/+%@", username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"This profile could not be found"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(NO, error);
+              }
+     ];
 }
 
 - (void)checkRedditForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.reddit.com/user/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"http://www.reddit.com/user/%@", username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"page not found"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkImgurForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://imgur.com/user/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"http://imgur.com/user/%@", username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"Zoinks! You've taken a wrong turn."]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkWordpressForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:[NSString stringWithFormat:@"https://%@.wordpress.com",username] parameters:nil
+    [self.manager GET:[NSString stringWithFormat:@"https://%@.wordpress.com",username] parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
              if ([html containsString:@"doesn&#8217;t&nbsp;exist"]) {
-                 
                  completion(YES, nil);
              } else {
-                 
                  completion(NO, nil);
              }
          }
@@ -402,58 +356,55 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkGravatarForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://en.gravatar.com/profiles/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"http://en.gravatar.com/profiles/%@",username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"doesn&#8217;t&nbsp;exist"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkEtsyShopForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.etsy.com/shop/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"https://www.etsy.com/shop/%@",username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"doesn&#8217;t&nbsp;exist"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkEtsyPeopleForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.etsy.com/people/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"https://www.etsy.com/people/%@",username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"doesn&#8217;t&nbsp;exist"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkAboutMeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:[NSString stringWithFormat:@"https://about.me/%@",username] parameters:nil
+    [self.manager GET:[NSString stringWithFormat:@"https://about.me/%@",username] parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
              if ([html containsString:@"could not be found. Try search."]) {
@@ -470,74 +421,55 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkKickAssToForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://kickass.to/user/%@/", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
-}
-
-- (void)checkThePirateBayForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://thepiratebay.se/user/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"http://kickass.to/user/%@/",username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"Page not found"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkFlickrForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.flickr.com/photos/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"https://www.flickr.com/photos/%@",username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"Page Not Found"]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkDeviantArtForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@.deviantart.com", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"http://%@.deviantart.com",username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"The page you were looking for doesn't exist."]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkTwitchForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:[NSString stringWithFormat:@"http://www.twitch.tv/%@",username] parameters:nil
+     [self.manager GET:[NSString stringWithFormat:@"http://www.twitch.tv/%@",username] parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
              if ([html containsString:@"content='Twitch' property='og:title'"]) {
@@ -555,148 +487,59 @@ static NSString * const BaseURLString = @"https://api.parse.com";
 }
 
 - (void)checkVimeoForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://vimeo.com/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
-}
-
-- (void)checkLifeHackerForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@.kinja.com", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
-}
-
-- (void)checkWikiAnswersForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://wiki.answers.com/Q/User:%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
+    [self.manager GET:[NSString stringWithFormat:@"https://vimeo.com/%@",username] parameters:nil
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                  if ([html containsString:@"Please check to make sure you’ve typed the URL correctly. You may also want to search for what you are looking for."]) {
+                      completion(YES, nil);
+                  } else {
+                      completion(NO, nil);
+                  }
+              }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  completion(YES, error);
+              }
+     ];
 }
 
 - (void)checkSoundCloudForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://soundcloud.com/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
+    [self.manager GET:[NSString stringWithFormat:@"https://soundcloud.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"Sorry"]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completion(YES, nil);
     }];
-    [op start];
-}
-
-- (void)checkIGNForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://people.ign.com/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
 }
 
 - (void)checkOkCupidForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.okcupid.com/profile/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
+    [self.manager GET:[NSString stringWithFormat:@"http://www.okcupid.com/profile/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"Join the best free dating site on Earth."]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completion(YES, nil);
     }];
-    [op start];}
-
-- (void)checkTheVergeForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.theverge.com/users/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
 }
 
 - (void)checkKickStarterForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.kickstarter.com/profile/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
+    [self.manager GET:[NSString stringWithFormat:@"https://www.kickstarter.com/profile/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"Oh my goodness"]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completion(YES, nil);
     }];
-    [op start];
 }
-
-- (void)checkSpotifyForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://play.spotify.com/user/%@", username]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(NO, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completion(YES, nil);
-    }];
-    [op start];
-}
-
 
 
 - (void)throwInvalidJsonDataException {
@@ -720,6 +563,18 @@ static NSString * const BaseURLString = @"https://api.parse.com";
     self = [super init];
     if (self) {
         [self setKeys];
+        self.manager = [AFHTTPRequestOperationManager manager];
+        
+        NSArray *responseSerializers = @[[AFJSONResponseSerializer serializer], [AFHTTPResponseSerializer serializer]];
+        AFCompoundResponseSerializer * compoundResponseSerializer = [AFCompoundResponseSerializer compoundSerializerWithResponseSerializers:responseSerializers];
+        self.manager.responseSerializer = compoundResponseSerializer;
+        self.manager.operationQueue.maxConcurrentOperationCount = 5;
+        self.manager.securityPolicy.allowInvalidCertificates = YES;
+        
+        self.desktopManager = [AFHTTPRequestOperationManager manager];
+        self.desktopManager.responseSerializer = compoundResponseSerializer;
+        self.desktopManager.operationQueue.maxConcurrentOperationCount = 5;
+        self.desktopManager.securityPolicy.allowInvalidCertificates = YES;
     }
     return self;
 }

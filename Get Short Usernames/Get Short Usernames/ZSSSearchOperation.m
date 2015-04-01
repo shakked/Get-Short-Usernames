@@ -13,6 +13,7 @@
 @interface ZSSSearchOperation ()
 
 @property (nonatomic, strong) NSArray *selectedNetworks;
+@property (nonatomic) int count;
 
 @end
 
@@ -22,30 +23,33 @@
     self = [super init];
     if (self) {
         _selectedNetworks = [[ZSSNetworkQuerier sharedQuerier] selectedNetworks];
+        _count = 0;
     }
     return self;
 }
 
 - (void)main {
     dispatch_group_t group = dispatch_group_create();
-    
+
     dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.count++;
+            NSLog(@"%d",self.count);
             if (self.isCancelled) {
                 return;
             } else {
+                NSLog(@"Finished searching");
                 [self.delegate searchOperationDidFinish];
             }
+            CFRunLoopStop(CFRunLoopGetCurrent());
         });
     });
-
-    
     
     if ([self.selectedNetworks containsObject:@"Instagram"]) {
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkInstagramForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
+            
             if (available) {
-
             }
             dispatch_group_leave(group);
         }];
@@ -55,7 +59,7 @@
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkGithubForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -75,7 +79,7 @@
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkTwitterForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -85,7 +89,7 @@
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkTumblrForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -95,9 +99,9 @@
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkEbayForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
-dispatch_group_leave(group);
+            dispatch_group_leave(group);
         }];
     }
     
@@ -105,9 +109,9 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkDribbbleForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
-dispatch_group_leave(group);
+            dispatch_group_leave(group);
         }];
     }
     
@@ -115,7 +119,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkBehanceForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-             
+                
             }
             dispatch_group_leave(group);
         }];
@@ -125,7 +129,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkYoutubeForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-             
+                
             }
             dispatch_group_leave(group);
         }];
@@ -135,7 +139,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkGooglePlusForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-             
+                
             }
             dispatch_group_leave(group);
         }];
@@ -145,7 +149,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkRedditForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -155,7 +159,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkImgurForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -165,7 +169,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkWordpressForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-             
+                
             }
             dispatch_group_leave(group);
         }];
@@ -175,7 +179,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkGravatarForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-             
+                
             }
             dispatch_group_leave(group);
         }];
@@ -185,7 +189,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkEtsyShopForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-             
+                
             }
             dispatch_group_leave(group);
         }];
@@ -195,7 +199,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkEtsyPeopleForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-             
+                
             }
             dispatch_group_leave(group);
         }];
@@ -205,7 +209,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkAboutMeForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -214,17 +218,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkKickAssToForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
-            }
-            dispatch_group_leave(group);
-        }];
-    }
-    
-    if ([self.selectedNetworks containsObject:@"ThePirateBay"]) {
-        dispatch_group_enter(group);
-        [[ZSSCloudQuerier sharedQuerier] checkThePirateBayForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -234,7 +228,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkFlickrForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -244,7 +238,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkDeviantArtForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -254,7 +248,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkTwitchForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -264,27 +258,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkVimeoForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
-            }
-            dispatch_group_leave(group);
-        }];
-    }
-    
-    if ([self.selectedNetworks containsObject:@"LifeHacker"]) {
-        dispatch_group_enter(group);
-        [[ZSSCloudQuerier sharedQuerier] checkLifeHackerForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-
-            }
-            dispatch_group_leave(group);
-        }];
-    }
-    
-    if ([self.selectedNetworks containsObject:@"WikiAnswers"]) {
-        dispatch_group_enter(group);
-        [[ZSSCloudQuerier sharedQuerier] checkWikiAnswersForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -294,17 +268,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkSoundCloudForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
-            }
-            dispatch_group_leave(group);
-        }];
-    }
-    
-    if ([self.selectedNetworks containsObject:@"IGN"]) {
-        dispatch_group_enter(group);
-        [[ZSSCloudQuerier sharedQuerier] checkIGNForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -314,17 +278,7 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkOkCupidForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
-            }
-            dispatch_group_leave(group);
-        }];
-    }
-    
-    if ([self.selectedNetworks containsObject:@"TheVerge"]) {
-        dispatch_group_enter(group);
-        [[ZSSCloudQuerier sharedQuerier] checkTheVergeForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-
+                
             }
             dispatch_group_leave(group);
         }];
@@ -334,22 +288,14 @@ dispatch_group_leave(group);
         dispatch_group_enter(group);
         [[ZSSCloudQuerier sharedQuerier] checkKickStarterForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
-
+                NSLog(@"kickStarter");
             }
             dispatch_group_leave(group);
         }];
     }
     
-    if ([self.selectedNetworks containsObject:@"Spotify"]) {
-        dispatch_group_enter(group);
-        [[ZSSCloudQuerier sharedQuerier] checkSpotifyForUsername:self.searchText withCompletion:^(BOOL available, NSError *error) {
-            if (available) {
-
-            }
-            dispatch_group_leave(group);
-        }];
-    }
-
+    CFRunLoopRun();
+    
 }
 
 @end

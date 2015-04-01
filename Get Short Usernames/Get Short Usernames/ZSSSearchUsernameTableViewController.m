@@ -15,6 +15,8 @@
 #import "UIImage+Logos.h"
 #import "ZSSSearchOperation.h"
 #import "ZSSSearchOperationDelegate.h"
+#import <AFNetworking.h>
+
 static NSString *MESSAGE_CELL_CLASS = @"ZSSSearchTableViewCell";
 static NSString *CELL_IDENTIFIER = @"cell";
 
@@ -59,6 +61,8 @@ static NSString *CELL_IDENTIFIER = @"cell";
 @property (nonatomic) BOOL isTheVergeAvailable;
 @property (nonatomic) BOOL isKickStarterAvailable;
 @property (nonatomic) BOOL isSpotifyAvailable;
+@property (nonatomic, strong) NSTimer * debounceTimer;
+@property (nonatomic, strong) AFHTTPRequestOperationManager * manager;
 
 @end
 
@@ -164,36 +168,22 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
     self.currentUsername = searchText;
     [self.tableView reloadData];
     [self.searchBar becomeFirstResponder];
     
-    [self searchStringAfterDelay:searchText];
+    [self.debounceTimer invalidate];
+    self.debounceTimer = nil;
     
-    if ([self.timeOfLastRequest timeIntervalSinceDate:[NSDate date]] >= 2) {
-        [self startSearching:searchText];
-        self.timeOfLastRequest = [NSDate date];
-    }
+    self.debounceTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(onDebounceTimerFired:) userInfo:nil repeats:NO];
 }
 
-- (void)searchStringAfterDelay:(NSString *)searchText {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(searchStringAfterDelay:) object:nil];
-    [self performSelector:@selector(searchAfterDelay:) withObject:searchText afterDelay:0.25];
-}
-
-- (void)searchAfterDelay:(id)searchText {
-    [self.searchOperationQueue cancelAllOperations];
-    ZSSSearchOperation *searchOperation = [[ZSSSearchOperation alloc] init];
-    searchOperation.searchText = (NSString *)searchText;
-    searchOperation.delegate = self;
-    [self.searchOperationQueue addOperation:searchOperation];
-    
-#warning SET THE SEARCH TEXT
-}
-
-- (void)searchOperationDidFinish {
-    //UPDATE UI!
+- (void) onDebounceTimerFired: (NSTimer *) timer {
+//observer for the operation queue count, wait for that to go back to zero
+    [self.manager.operationQueue cancelAllOperations];
+    self.availableNetworks = [[NSMutableArray alloc] initWithArray:@[]];
+    [self.tableView reloadData];
+    [self startSearching:self.searchBar.text];
 }
 
 - (void)searchBarButtonPressed {
@@ -479,6 +469,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
     if ([self.selectedNetworks containsObject:@"SoundCloud"]) {
         [[ZSSCloudQuerier sharedQuerier] checkSoundCloudForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
             if (available) {
+                NSLog(@"soundlcoud is available");
                 [self.availableNetworks addObject:@"SoundCloud"];
             }
             [self.tableView beginUpdates];
