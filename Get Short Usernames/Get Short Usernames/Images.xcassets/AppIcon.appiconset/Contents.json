@@ -3,25 +3,25 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Settings@2x.png",
+      "filename" : "SpotlightIcon@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Settings@3x.png",
+      "filename" : "SpotlightIcon@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Spotlight@2x.png",
+      "filename" : "SettingsIcon@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Spotlight@3x.png",
+      "filename" : "SettingsIcon@3x.png",
       "scale" : "3x"
     },
     {

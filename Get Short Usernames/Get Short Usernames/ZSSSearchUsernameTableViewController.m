@@ -38,6 +38,7 @@ static NSString *CELL_IDENTIFIER = @"cell";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.navigationController.navigationBar.barTintColor = [UIColor belizeHoleColor];
     self.selectedNetworks = [[ZSSNetworkQuerier sharedQuerier] selectedNetworks];
     [self.tableView reloadData];
