@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZSSPurchaseViewController">
@@ -42,13 +42,13 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H2M-TH-GTD">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H2M-TH-GTD">
                     <rect key="frame" x="150" y="102" width="300" height="135"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="Zky-hP-Hpj"/>
                         <constraint firstAttribute="width" constant="300" id="m5Y-KE-v9W"/>
                     </constraints>
-                    <string key="text">Search for Usernames on Ebay, Dribbble, Behance, YouTube, GooglePlus, Reddit, Imgur, Wordpress, Gravatar, Etsy(Shop), Etsy(People), About.Me, KickAssTo, Flickr, Deviant Art, Twitch, Vimeo, SoundCloud, OkCupid, and KickStarter!</string>
+                    <string key="text">Search for Usernames on Ebay, Dribbble, Behance, YouTube, GooglePlus, Reddit, Imgur, Wordpress, Gravatar, Etsy(Shop), Etsy(People), About.Me, KickAssTo, Flickr, Deviant Art, Twitch, Vimeo, SoundCloud, OkCupid,KickStarter and TONS more!</string>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

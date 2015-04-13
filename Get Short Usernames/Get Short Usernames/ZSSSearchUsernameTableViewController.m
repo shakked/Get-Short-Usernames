@@ -432,6 +432,222 @@ static NSString *CELL_IDENTIFIER = @"cell";
         }];
     }
     
+    if ([self.selectedNetworks containsObject:@"Blogger"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"MySpace"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"LinkedIn"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"PhotoBucket"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Hulu"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"HubPages"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"CafeMom"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Disqus"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Fanpop"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"StumbleUpon"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"LastFM"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Kongregate"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"UStream"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Instructables"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"FourSquare"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"LiveJournal"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Badoo"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"BitLy"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"BlipTV"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Steam"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Kaboodle"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Viddler"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Delicious"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Xanga"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"SoupIO"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Digg"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Buzznet"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Technorati"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Tripit"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Fotolog"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Faves"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Netvibes"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"BlinkList"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"GogoBot"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Aviary"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"FoodSpotting"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Flavors"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Plancast"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"BlipFm"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"WeFollow"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Wishlistr"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"XboxGamertag"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"PlayStationNetwork"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"TripAdvisor"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"BuzzFeed"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"BandCamp"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Beatport"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"HackerNews"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"LiveLeak"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"ImageShack"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Alibaba"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Scribd"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Elance"]) {
+        
+    }
+    
+    if ([self.selectedNetworks containsObject:@"Slack"]) {
+        
+    }
+    
     
 }
 

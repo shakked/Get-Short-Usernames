@@ -114,7 +114,7 @@
 }
 
 - (void)configureAllNetworkNames {
-    _allNetworkNames = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr", @"Ebay", @"Dribbble", @"Behance", @"Youtube", @"GooglePlus", @"Reddit", @"Imgur", @"Wordpress", @"Gravatar", @"EtsyShop", @"EtsyPeople", @"AboutMe", @"KickAssTo", @"Flickr", @"DeviantArt", @"Twitch", @"Vimeo", @"SoundCloud", @"OkCupid", @"KickStarter"];
+    _allNetworkNames = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr", @"Ebay", @"Dribbble", @"Behance", @"Youtube", @"GooglePlus", @"Reddit", @"Imgur", @"Wordpress", @"Gravatar", @"EtsyShop", @"EtsyPeople", @"AboutMe", @"KickAssTo", @"Flickr", @"DeviantArt", @"Twitch", @"Vimeo", @"SoundCloud", @"OkCupid", @"KickStarter",@"Blogger", @"MySpace", @"LinkedIn", @"PhotoBucket", @"Hulu", @"HubPages", @"CafeMom", @"Disqus", @"Fanpop", @"StumbleUpon", @"LastFM", @"Kongregate", @"UStream", @"Instructables", @"FourSquare", @"LiveJournal", @"Badoo", @"BitLy", @"BlipTV", @"Steam", @"Kaboodle", @"Viddler", @"Delicious", @"Xanga", @"SoupIO", @"Digg", @"Buzznet", @"Technorati", @"Tripit", @"Fotolog", @"Netvibes", @"BlinkList", @"GogoBot", @"Aviary", @"FoodSpotting", @"Flavors", @"Plancast", @"BlipFM", @"WeFollow", @"XboxGamertag", @"PlayStationNetwork", @"TripAdvisor", @"BuzzFeed", @"BandCamp", @"Beatport", @"HackerNews", @"LiveLeak", @"ImageShack", @"Alibaba", @"Scribd", @"Elance", @"Slack"];
 }
 
 - (instancetype)init {
@@ -123,6 +123,10 @@
                                  userInfo:nil];
     return nil;
 }
+
+
+
+
 
 
 

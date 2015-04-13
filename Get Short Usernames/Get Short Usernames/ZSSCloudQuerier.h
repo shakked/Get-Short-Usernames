@@ -63,7 +63,6 @@
 - (void)checkBlipTVForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkSteamForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkKaboodleForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkDailyBoothForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkViddlerForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkDeliciousForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkXangaForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
