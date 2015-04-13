@@ -46,6 +46,7 @@
 - (void)checkLinkedInForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkPhotoBucketForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkHuluForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
+
 - (void)checkHubPagesForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkCafeMomForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkDisqusForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
@@ -96,4 +97,5 @@
 - (void)checkScribdForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkElanceForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkSlackForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
+
 @end

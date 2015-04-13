@@ -426,6 +426,73 @@
     }];
 }
 
+- (void)checkBloggerForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    [self.desktopManager GET:[NSString stringWithFormat:@"http://%@.blogspot.com/", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"Blog not found"]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(YES, nil);
+    }];
+}
+
+- (void)checkMySpaceForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    [self.desktopManager GET:[NSString stringWithFormat:@"https://myspace.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"Page Not Found"]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(YES, nil);
+    }];
+}
+
+- (void)checkLinkedInForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    [self.desktopManager GET:[NSString stringWithFormat:@"https://www.linkedin.com/in/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"Profile Not Found"]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(YES, nil);
+    }];
+}
+
+- (void)checkPhotoBucketForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    [self.desktopManager GET:[NSString stringWithFormat:@"http://photobucket.com/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"Sorry, the requested page does not exist."]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(YES, nil);
+    }];
+}
+
+- (void)checkHuluForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion {
+    [self.desktopManager GET:[NSString stringWithFormat:@"http://www.hulu.com/profiles/%@", username] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if ([html containsString:@"The page you were looking for doesn't exist (404 error)"]) {
+            completion(YES, nil);
+        } else {
+            completion(NO, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completion(YES, nil);
+    }];
+}
+
+
+
 - (instancetype)initPrivate {
     self = [super init];
     if (self) {
