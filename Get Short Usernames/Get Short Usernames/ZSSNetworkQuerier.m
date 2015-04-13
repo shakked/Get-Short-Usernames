@@ -25,7 +25,7 @@
 
 - (BOOL)didUnlockAllNetworks {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL didUnlockAllNetworks = [defaults boolForKey:@"com.zacharyshakked.iap.UnlockAllNetworks"];
+    BOOL didUnlockAllNetworks = [defaults boolForKey:@"com.zacharyshaskked.iap.UnlockAllNetworks"];
     if (didUnlockAllNetworks) {
         return YES;
     } else {
