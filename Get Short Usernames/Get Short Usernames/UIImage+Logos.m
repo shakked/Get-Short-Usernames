@@ -74,6 +74,12 @@
         logo = [UIImage imageNamed:@"kickstarter.png"];
     } else if ([network isEqualToString:@"Spotify"]) {
         logo = [UIImage imageNamed:@"spotify.png"];
+    } else if ([network isEqualToString:@"Alibaba"]) {
+        logo = [UIImage imageNamed:@"Alibaba.png"];
+    } else if ([network isEqualToString:@"Aviary"]) {
+        logo = [UIImage imageNamed:@"Aviary.png"];
+    } else {
+        logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", network]];
     }
     return logo;
 }

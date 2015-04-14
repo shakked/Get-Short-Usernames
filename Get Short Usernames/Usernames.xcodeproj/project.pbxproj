@@ -86,6 +86,25 @@
 		4A99A10E1ADC5BAE00EDE154 /* WeFollow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A0DB1ADC5BAE00EDE154 /* WeFollow.png */; };
 		4A99A10F1ADC5BAE00EDE154 /* Xanga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A0DC1ADC5BAE00EDE154 /* Xanga.jpg */; };
 		4A99A1101ADC5BAE00EDE154 /* XboxGamertag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A0DD1ADC5BAE00EDE154 /* XboxGamertag.jpg */; };
+		4A99A1121ADC5DB100EDE154 /* Blogger.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1111ADC5DB100EDE154 /* Blogger.png */; };
+		4A99A11A1ADC5E0000EDE154 /* Beatport.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1131ADC5E0000EDE154 /* Beatport.png */; };
+		4A99A11B1ADC5E0000EDE154 /* CafeMom.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1141ADC5E0000EDE154 /* CafeMom.png */; };
+		4A99A11C1ADC5E0000EDE154 /* Fotolog.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1151ADC5E0000EDE154 /* Fotolog.png */; };
+		4A99A11D1ADC5E0000EDE154 /* GogoBot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1161ADC5E0000EDE154 /* GogoBot.png */; };
+		4A99A11E1ADC5E0000EDE154 /* PlayStationNetwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1171ADC5E0000EDE154 /* PlayStationNetwork.png */; };
+		4A99A11F1ADC5E0000EDE154 /* Xanga.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1181ADC5E0000EDE154 /* Xanga.png */; };
+		4A99A1201ADC5E0000EDE154 /* XboxGamertag.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1191ADC5E0000EDE154 /* XboxGamertag.png */; };
+		4A99A1241ADC5E4100EDE154 /* Plancast.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1211ADC5E4100EDE154 /* Plancast.png */; };
+		4A99A1251ADC5E4100EDE154 /* Slack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1221ADC5E4100EDE154 /* Slack.png */; };
+		4A99A1261ADC5E4100EDE154 /* Steam.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1231ADC5E4100EDE154 /* Steam.png */; };
+		4A99A12F1ADC5FEF00EDE154 /* Digg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1271ADC5FEF00EDE154 /* Digg.png */; };
+		4A99A1301ADC5FEF00EDE154 /* Disqus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1281ADC5FEF00EDE154 /* Disqus.png */; };
+		4A99A1311ADC5FEF00EDE154 /* Elance.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A1291ADC5FEF00EDE154 /* Elance.png */; };
+		4A99A1321ADC5FEF00EDE154 /* Fanpop.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A12A1ADC5FEF00EDE154 /* Fanpop.png */; };
+		4A99A1331ADC5FEF00EDE154 /* Fotolog.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A12B1ADC5FEF00EDE154 /* Fotolog.png */; };
+		4A99A1341ADC5FEF00EDE154 /* HackerNews.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A12C1ADC5FEF00EDE154 /* HackerNews.png */; };
+		4A99A1351ADC5FEF00EDE154 /* HubPages.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A12D1ADC5FEF00EDE154 /* HubPages.png */; };
+		4A99A1361ADC5FEF00EDE154 /* Photobucket.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A99A12E1ADC5FEF00EDE154 /* Photobucket.png */; };
 		4AA5BB341AC0487500CE458A /* ZSSNetworkQuerier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5BB331AC0487500CE458A /* ZSSNetworkQuerier.m */; };
 		4AA5BB371AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5BB361AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.m */; };
 		4AB2F1ED1AC18D0B0066090A /* Settings Filled-99.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB2F1EA1AC18D0B0066090A /* Settings Filled-99.png */; };
@@ -240,6 +259,25 @@
 		4A99A0DB1ADC5BAE00EDE154 /* WeFollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WeFollow.png; path = images/logos/WeFollow.png; sourceTree = SOURCE_ROOT; };
 		4A99A0DC1ADC5BAE00EDE154 /* Xanga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Xanga.jpg; path = images/logos/Xanga.jpg; sourceTree = SOURCE_ROOT; };
 		4A99A0DD1ADC5BAE00EDE154 /* XboxGamertag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = XboxGamertag.jpg; path = images/logos/XboxGamertag.jpg; sourceTree = SOURCE_ROOT; };
+		4A99A1111ADC5DB100EDE154 /* Blogger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blogger.png; path = images/logos/Blogger.png; sourceTree = SOURCE_ROOT; };
+		4A99A1131ADC5E0000EDE154 /* Beatport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Beatport.png; path = images/logos/Beatport.png; sourceTree = SOURCE_ROOT; };
+		4A99A1141ADC5E0000EDE154 /* CafeMom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CafeMom.png; path = images/logos/CafeMom.png; sourceTree = SOURCE_ROOT; };
+		4A99A1151ADC5E0000EDE154 /* Fotolog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fotolog.png; path = images/logos/Fotolog.png; sourceTree = SOURCE_ROOT; };
+		4A99A1161ADC5E0000EDE154 /* GogoBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GogoBot.png; path = images/logos/GogoBot.png; sourceTree = SOURCE_ROOT; };
+		4A99A1171ADC5E0000EDE154 /* PlayStationNetwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlayStationNetwork.png; path = images/logos/PlayStationNetwork.png; sourceTree = SOURCE_ROOT; };
+		4A99A1181ADC5E0000EDE154 /* Xanga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Xanga.png; path = images/logos/Xanga.png; sourceTree = SOURCE_ROOT; };
+		4A99A1191ADC5E0000EDE154 /* XboxGamertag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = XboxGamertag.png; path = images/logos/XboxGamertag.png; sourceTree = SOURCE_ROOT; };
+		4A99A1211ADC5E4100EDE154 /* Plancast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Plancast.png; path = images/logos/Plancast.png; sourceTree = SOURCE_ROOT; };
+		4A99A1221ADC5E4100EDE154 /* Slack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Slack.png; path = images/logos/Slack.png; sourceTree = SOURCE_ROOT; };
+		4A99A1231ADC5E4100EDE154 /* Steam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Steam.png; path = images/logos/Steam.png; sourceTree = SOURCE_ROOT; };
+		4A99A1271ADC5FEF00EDE154 /* Digg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Digg.png; path = images/logos/Digg.png; sourceTree = SOURCE_ROOT; };
+		4A99A1281ADC5FEF00EDE154 /* Disqus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Disqus.png; path = images/logos/Disqus.png; sourceTree = SOURCE_ROOT; };
+		4A99A1291ADC5FEF00EDE154 /* Elance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Elance.png; path = images/logos/Elance.png; sourceTree = SOURCE_ROOT; };
+		4A99A12A1ADC5FEF00EDE154 /* Fanpop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fanpop.png; path = images/logos/Fanpop.png; sourceTree = SOURCE_ROOT; };
+		4A99A12B1ADC5FEF00EDE154 /* Fotolog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fotolog.png; path = images/logos/Fotolog.png; sourceTree = SOURCE_ROOT; };
+		4A99A12C1ADC5FEF00EDE154 /* HackerNews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HackerNews.png; path = images/logos/HackerNews.png; sourceTree = SOURCE_ROOT; };
+		4A99A12D1ADC5FEF00EDE154 /* HubPages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HubPages.png; path = images/logos/HubPages.png; sourceTree = SOURCE_ROOT; };
+		4A99A12E1ADC5FEF00EDE154 /* Photobucket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Photobucket.png; path = images/logos/Photobucket.png; sourceTree = SOURCE_ROOT; };
 		4AA5BB321AC0487500CE458A /* ZSSNetworkQuerier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSNetworkQuerier.h; sourceTree = "<group>"; };
 		4AA5BB331AC0487500CE458A /* ZSSNetworkQuerier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSNetworkQuerier.m; sourceTree = "<group>"; };
 		4AA5BB351AC060EB00CE458A /* ZSSNetworkSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSNetworkSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -469,6 +507,7 @@
 				4AC2B2121AC069F2006B2EEE /* vimeo.png */,
 				4AC2B2131AC069F2006B2EEE /* wordpress.png */,
 				4AC2B2141AC069F2006B2EEE /* youtube.png */,
+				4A99A1111ADC5DB100EDE154 /* Blogger.png */,
 				4AC2B2201AC06A76006B2EEE /* imgur.png */,
 				4AC2B2221AC06AB3006B2EEE /* gravatar.jpg */,
 				4AC2B2261AC06B22006B2EEE /* kickasstorrents.png */,
@@ -503,6 +542,14 @@
 				4A99A0BE1ADC5BAE00EDE154 /* FoodSpotting.png */,
 				4A99A0BF1ADC5BAE00EDE154 /* Fotolog.jpg */,
 				4A99A0C01ADC5BAE00EDE154 /* FourSquare.png */,
+				4A99A1271ADC5FEF00EDE154 /* Digg.png */,
+				4A99A1281ADC5FEF00EDE154 /* Disqus.png */,
+				4A99A1291ADC5FEF00EDE154 /* Elance.png */,
+				4A99A12A1ADC5FEF00EDE154 /* Fanpop.png */,
+				4A99A12B1ADC5FEF00EDE154 /* Fotolog.png */,
+				4A99A12C1ADC5FEF00EDE154 /* HackerNews.png */,
+				4A99A12D1ADC5FEF00EDE154 /* HubPages.png */,
+				4A99A12E1ADC5FEF00EDE154 /* Photobucket.png */,
 				4A99A0C11ADC5BAE00EDE154 /* GogoBot.jpg */,
 				4A99A0C21ADC5BAE00EDE154 /* HackerNews.ico */,
 				4A99A0C31ADC5BAE00EDE154 /* HubPages.gif */,
@@ -523,7 +570,17 @@
 				4A99A0D21ADC5BAE00EDE154 /* Slack.jpeg */,
 				4A99A0D31ADC5BAE00EDE154 /* SoupIO.png */,
 				4A99A0D41ADC5BAE00EDE154 /* Steam.jpeg */,
+				4A99A1131ADC5E0000EDE154 /* Beatport.png */,
+				4A99A1141ADC5E0000EDE154 /* CafeMom.png */,
+				4A99A1151ADC5E0000EDE154 /* Fotolog.png */,
+				4A99A1161ADC5E0000EDE154 /* GogoBot.png */,
+				4A99A1171ADC5E0000EDE154 /* PlayStationNetwork.png */,
+				4A99A1181ADC5E0000EDE154 /* Xanga.png */,
+				4A99A1191ADC5E0000EDE154 /* XboxGamertag.png */,
 				4A99A0D51ADC5BAE00EDE154 /* StumbleUpon.png */,
+				4A99A1211ADC5E4100EDE154 /* Plancast.png */,
+				4A99A1221ADC5E4100EDE154 /* Slack.png */,
+				4A99A1231ADC5E4100EDE154 /* Steam.png */,
 				4A99A0D61ADC5BAE00EDE154 /* Technorati.png */,
 				4A99A0D71ADC5BAE00EDE154 /* TripAdvisor.png */,
 				4A99A0D81ADC5BAE00EDE154 /* Tripit.png */,
@@ -623,8 +680,10 @@
 			files = (
 				4A99A1081ADC5BAE00EDE154 /* StumbleUpon.png in Resources */,
 				4ADB73C01A94307500BB053D /* Cancel-66.png in Resources */,
+				4A99A1201ADC5E0000EDE154 /* XboxGamertag.png in Resources */,
 				4A99A0E41ADC5BAE00EDE154 /* BlinkList.png in Resources */,
 				4AC2B22F1AC07F0B006B2EEE /* icon.png in Resources */,
+				4A99A1241ADC5E4100EDE154 /* Plancast.png in Resources */,
 				4A99A0FA1ADC5BAE00EDE154 /* Kaboodle.png in Resources */,
 				4AC2B21A1AC069F2006B2EEE /* reddit.png in Resources */,
 				4A99A0FD1ADC5BAE00EDE154 /* LinkedIn.png in Resources */,
@@ -633,12 +692,14 @@
 				4A99A10B1ADC5BAE00EDE154 /* Tripit.png in Resources */,
 				4A99A1051ADC5BAE00EDE154 /* Slack.jpeg in Resources */,
 				4A99A1061ADC5BAE00EDE154 /* SoupIO.png in Resources */,
+				4A99A1261ADC5E4100EDE154 /* Steam.png in Resources */,
 				4AC2B2151AC069F2006B2EEE /* deviantart.png in Resources */,
 				4AC2B22E1AC07F0B006B2EEE /* verge.png in Resources */,
 				4A1969F01AC33FA4001AA6E9 /* ZSSPurchaseViewController.xib in Resources */,
 				4A99A1031ADC5BAE00EDE154 /* PlayStationNetwork.jpg in Resources */,
 				4AC2B2181AC069F2006B2EEE /* googleplus.png in Resources */,
 				4AC2B2231AC06AB3006B2EEE /* gravatar.jpg in Resources */,
+				4A99A11C1ADC5E0000EDE154 /* Fotolog.png in Resources */,
 				4A99A0FE1ADC5BAE00EDE154 /* LiveJournal.png in Resources */,
 				4A99A1091ADC5BAE00EDE154 /* Technorati.png in Resources */,
 				4AB2F1EF1AC18D0B0066090A /* Settings Filled-33-2.png in Resources */,
@@ -649,19 +710,24 @@
 				4A99A10F1ADC5BAE00EDE154 /* Xanga.jpg in Resources */,
 				4A6EAA071A92A6A4007ADFF8 /* ZSSUsernameTableViewCell.xib in Resources */,
 				4A99A10C1ADC5BAE00EDE154 /* UStream.png in Resources */,
+				4A99A11E1ADC5E0000EDE154 /* PlayStationNetwork.png in Resources */,
 				4A99A0F31ADC5BAE00EDE154 /* FourSquare.png in Resources */,
 				4AC2B2091AC06998006B2EEE /* behance.png in Resources */,
 				4AC2B2191AC069F2006B2EEE /* kickstarter.png in Resources */,
 				4AC2B2161AC069F2006B2EEE /* etsy.png in Resources */,
+				4A99A1331ADC5FEF00EDE154 /* Fotolog.png in Resources */,
+				4A99A11B1ADC5E0000EDE154 /* CafeMom.png in Resources */,
 				4ADB73AE1A942C0000BB053D /* ZSSSearchTableViewCell.xib in Resources */,
 				4A99A0DE1ADC5BAE00EDE154 /* Alibaba.png in Resources */,
 				4A99A0F41ADC5BAE00EDE154 /* GogoBot.jpg in Resources */,
 				4AC2B2371AC08321006B2EEE /* okcupid.png in Resources */,
 				4A99A0DF1ADC5BAE00EDE154 /* Aviary.png in Resources */,
+				4A99A1341ADC5FEF00EDE154 /* HackerNews.png in Resources */,
 				4AC2B2331AC07F0B006B2EEE /* Twitch.png in Resources */,
 				4A89EA161ACCB4160094A75C /* iPhoneIcon@3x.png in Resources */,
 				4AC2B2351AC082B8006B2EEE /* piratebay.png in Resources */,
 				4ADB73C21A94307500BB053D /* Checkmark-33.png in Resources */,
+				4A99A12F1ADC5FEF00EDE154 /* Digg.png in Resources */,
 				4ADB73C11A94307500BB053D /* Cancel-99.png in Resources */,
 				4AC2B21C1AC069F2006B2EEE /* spotify.png in Resources */,
 				4A99A0ED1ADC5BAE00EDE154 /* Disqus.svg in Resources */,
@@ -669,6 +735,7 @@
 				4AB2F1ED1AC18D0B0066090A /* Settings Filled-99.png in Resources */,
 				4A99A0F51ADC5BAE00EDE154 /* HackerNews.ico in Resources */,
 				4AC2B2171AC069F2006B2EEE /* flickr.png in Resources */,
+				4A99A1121ADC5DB100EDE154 /* Blogger.png in Resources */,
 				4AC2B2211AC06A76006B2EEE /* imgur.png in Resources */,
 				4AC2B2311AC07F0B006B2EEE /* WikipediaW.png in Resources */,
 				4A99A0E81ADC5BAE00EDE154 /* BuzzFeed.png in Resources */,
@@ -679,17 +746,21 @@
 				4AC2B2301AC07F0B006B2EEE /* ign.jpg in Resources */,
 				4A12A39C1A92BF7400255534 /* left_filled-66-2.png in Resources */,
 				4A99A0EC1ADC5BAE00EDE154 /* Digg.jpg in Resources */,
+				4A99A1351ADC5FEF00EDE154 /* HubPages.png in Resources */,
 				4A99A0E61ADC5BAE00EDE154 /* BlipTV.png in Resources */,
 				4A99A0E31ADC5BAE00EDE154 /* BitLy.png in Resources */,
 				4A99A0EB1ADC5BAE00EDE154 /* Delicious.png in Resources */,
+				4A99A1321ADC5FEF00EDE154 /* Fanpop.png in Resources */,
 				4AC2B2051AC06966006B2EEE /* ebay.png in Resources */,
 				4AC2B2251AC06ACD006B2EEE /* aboutme.png in Resources */,
+				4A99A11A1ADC5E0000EDE154 /* Beatport.png in Resources */,
 				4A99A1011ADC5BAE00EDE154 /* Netvibes.png in Resources */,
 				4A99A0EE1ADC5BAE00EDE154 /* Elance.jpg in Resources */,
 				4A99A0E11ADC5BAE00EDE154 /* BandCamp.png in Resources */,
 				4A99A10E1ADC5BAE00EDE154 /* WeFollow.png in Resources */,
 				4A32DD4C1A95950800449F95 /* github.png in Resources */,
 				4A99A10A1ADC5BAE00EDE154 /* TripAdvisor.png in Resources */,
+				4A99A1251ADC5E4100EDE154 /* Slack.png in Resources */,
 				4AB2F1EE1AC18D0B0066090A /* Settings Filled-66.png in Resources */,
 				4A99A0FB1ADC5BAE00EDE154 /* Kongregate.png in Resources */,
 				4A99A0F91ADC5BAE00EDE154 /* Instructables.png in Resources */,
@@ -703,11 +774,14 @@
 				4AC2B21B1AC069F2006B2EEE /* soundcloud.png in Resources */,
 				4AC2B2321AC07F0B006B2EEE /* lifehacker.png in Resources */,
 				4A0378E91A92A412000D5B7C /* LaunchScreen.xib in Resources */,
+				4A99A11F1ADC5E0000EDE154 /* Xanga.png in Resources */,
 				4A99A10D1ADC5BAE00EDE154 /* Viddler.png in Resources */,
+				4A99A1301ADC5FEF00EDE154 /* Disqus.png in Resources */,
 				4A99A0F01ADC5BAE00EDE154 /* Flavors.png in Resources */,
 				4A12A39B1A92BF7400255534 /* left_filled-99-2.png in Resources */,
 				4A99A0F11ADC5BAE00EDE154 /* FoodSpotting.png in Resources */,
 				4ADB73BF1A94307500BB053D /* Cancel-33.png in Resources */,
+				4A99A11D1ADC5E0000EDE154 /* GogoBot.png in Resources */,
 				4A32DD501A95950800449F95 /* twitter.png in Resources */,
 				4A99A0FC1ADC5BAE00EDE154 /* LastFM.png in Resources */,
 				4A99A1101ADC5BAE00EDE154 /* XboxGamertag.jpg in Resources */,
@@ -715,6 +789,7 @@
 				4A32DD4D1A95950800449F95 /* instagram.png in Resources */,
 				4ADB73C41A94307500BB053D /* Checkmark-99.png in Resources */,
 				4ADB73C31A94307500BB053D /* Checkmark-66.png in Resources */,
+				4A99A1311ADC5FEF00EDE154 /* Elance.png in Resources */,
 				4A0378E61A92A412000D5B7C /* Images.xcassets in Resources */,
 				4A99A1041ADC5BAE00EDE154 /* Scribd.png in Resources */,
 				4AC2B21D1AC069F2006B2EEE /* vimeo.png in Resources */,
@@ -723,6 +798,7 @@
 				4A6EAA051A92A6A4007ADFF8 /* ZSSNetworkTableViewCell.xib in Resources */,
 				4A89EA141ACCB13A0094A75C /* ZSSNetworkSelectCell.xib in Resources */,
 				4A99A0E01ADC5BAE00EDE154 /* Badoo.png in Resources */,
+				4A99A1361ADC5FEF00EDE154 /* Photobucket.png in Resources */,
 				4A99A0EA1ADC5BAE00EDE154 /* CafeMom.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

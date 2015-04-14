@@ -56,7 +56,6 @@
 - (void)checkKongregateForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkUStreamForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkInstructablesForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkFourSquareForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkLiveJournalForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkBadooForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkBitLyForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
@@ -84,7 +83,6 @@
 - (void)checkWeFollowForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkWishlistrForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkXboxGamertagForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
-- (void)checkPlayStationNetworkForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkTripAdvisorForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkBuzzFeedForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
 - (void)checkBandCampForUsername:(NSString *)username withCompletion:(void (^)(BOOL, NSError *))completion;
