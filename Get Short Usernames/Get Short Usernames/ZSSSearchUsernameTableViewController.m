@@ -433,219 +433,477 @@ static NSString *CELL_IDENTIFIER = @"cell";
     }
     
     if ([self.selectedNetworks containsObject:@"Blogger"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBloggerForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Blogger"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Blogger"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"MySpace"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkMySpaceForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"MySpace"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"MySpace"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"LinkedIn"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkLinkedInForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"LinkedIn"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"LinkedIn"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"PhotoBucket"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkPhotoBucketForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"PhotoBucket"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"PhotoBucket"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Hulu"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkHuluForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Hulu"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Hulu"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"HubPages"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkHubPagesForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"HubPages"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"HubPages"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"CafeMom"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkCafeMomForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"CafeMom"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"CafeMom"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Disqus"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkDisqusForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Disqus"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Disqus"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Fanpop"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkFanpopForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Fanpop"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Fanpop"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"StumbleUpon"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkStumbleUponForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"StumbleUpon"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"StumbleUpon"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"LastFM"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkLastFMForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"LastFM"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"LastFM"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Kongregate"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkKongregateForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Kongregate"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Kongregate"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"UStream"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkUStreamForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"UStream"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"UStream"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Instructables"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"FourSquare"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkInstructablesForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Instructables"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Instructables"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"LiveJournal"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkLiveJournalForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"LiveJournal"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"LiveJournal"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Badoo"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBadooForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Badoo"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Badoo"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"BitLy"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBloggerForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Blogger"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Blogger"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"BlipTV"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBlipTVForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"BlipTV"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"BlipTV"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
-    
+
     if ([self.selectedNetworks containsObject:@"Steam"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkSteamForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Steam"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Steam"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Kaboodle"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"Viddler"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkKaboodleForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Kaboodle"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Kaboodle"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Delicious"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"Xanga"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkDeliciousForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Delicious"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Delicious"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"SoupIO"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"Digg"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkSoupIOForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"SoupIO"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"SoupIO"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Buzznet"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"Technorati"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBuzznetForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Buzznet"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Buzznet"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Tripit"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkTripitForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Tripit"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Tripit"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Fotolog"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"Faves"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"Netvibes"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkFotologForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Fotolog"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Fotolog"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"BlinkList"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBlinkListForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"BlinkList"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"BlinkList"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"GogoBot"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkGogoBotForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"GogoBot"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"GogoBot"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Aviary"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"FoodSpotting"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkAviaryForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Aviary"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Aviary"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Flavors"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkFlavorsForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Flavors"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Flavors"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Plancast"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"BlipFm"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkPlancastForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Plancast"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Plancast"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"WeFollow"]) {
-        
-    }
-    
-    if ([self.selectedNetworks containsObject:@"Wishlistr"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkWeFollowForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"WeFollow"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"WeFollow"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"XboxGamertag"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkXboxGamertagForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"XboxGamertag"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"XboxGamertag"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
-    
-    if ([self.selectedNetworks containsObject:@"PlayStationNetwork"]) {
-        
-    }
+
     
     if ([self.selectedNetworks containsObject:@"TripAdvisor"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkTripAdvisorForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"TripAdvisor"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"TripAdvisor"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"BuzzFeed"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBuzzFeedForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"BuzzFeed"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"BuzzFeed"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"BandCamp"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBandCampForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"BandCamp"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"BandCamp"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Beatport"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkBeatportForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Beatport"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Beatport"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"HackerNews"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkHackerNewsForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"HackerNews"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"HackerNews"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"LiveLeak"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkLiveLeakForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"LiveLeak"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"LiveLeak"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"ImageShack"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkImageShackForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"ImageShack"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"ImageShack"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Alibaba"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkAlibabaForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Alibaba"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Alibaba"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Scribd"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkScribdForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Scribd"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Scribd"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Elance"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkElanceForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Elance"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Elance"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     if ([self.selectedNetworks containsObject:@"Slack"]) {
-        
+        [[ZSSCloudQuerier sharedQuerier] checkSlackForUsername:searchText withCompletion:^(BOOL available, NSError *error) {
+            if (available) {
+                [self.availableNetworks addObject:@"Slack"];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.selectedNetworks indexOfObject:@"Slack"] inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+        }];
     }
     
     

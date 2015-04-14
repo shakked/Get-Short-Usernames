@@ -1011,6 +1011,7 @@
         completion(YES, nil);
     }];
 }
+
 - (instancetype)initPrivate {
     self = [super init];
     if (self) {
