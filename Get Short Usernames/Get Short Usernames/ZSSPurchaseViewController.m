@@ -37,12 +37,15 @@
 @property (strong, nonatomic) NSOperationQueue *queue;
 @property (strong, nonatomic) NSDate *lastUpdateTime;
 
+@property (nonatomic, strong) NSMutableArray *randomNetworks;
+
 @end
 
 @implementation ZSSPurchaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureRandomNetworks];
     [self configureViews];
     [self configureMotionManager];
     
@@ -80,7 +83,9 @@
     
     NSArray *networks = [[ZSSNetworkQuerier sharedQuerier] allNetworkNames];
     CGSize size = self.view.frame.size;
-    for (NSString *network in networks) {
+    
+    
+    for (NSString *network in self.randomNetworks) {
         UIImageView *networkLogo = [[UIImageView alloc] initWithImage:[UIImage logoForNetwork:network]];
         int randomContainedX = arc4random() % (int)(size.width - 60) + 20;
         int randomContainedY = arc4random() % 30 + 50;
@@ -92,11 +97,34 @@
         [self.gravity addItem:networkLogo];
         [self.collision addItem:networkLogo];
         [self.itemBehavaior addItem:networkLogo];
-        
+    
     }
     
 }
 
+- (void)configureRandomNetworks {
+    NSUInteger networksCount = [[[ZSSNetworkQuerier sharedQuerier] allNetworkNames] count];
+    NSNumber *randomInt;
+    NSMutableArray *randomInts = [[NSMutableArray alloc] init];
+    while (randomInts.count < 35) {
+        
+        randomInt = @(arc4random() % networksCount);
+            
+        while([randomInts containsObject:randomInt]) {
+            randomInt = @(arc4random() % networksCount);
+        }
+        [randomInts addObject:randomInt];
+    }
+    
+    NSMutableArray *randomNetworks = [[NSMutableArray alloc] init];
+    NSArray *allNetworks = [[ZSSNetworkQuerier sharedQuerier] allNetworkNames];
+    
+    for (NSNumber *number in randomInts) {
+        NSString *network = allNetworks[number.intValue];
+        [randomNetworks addObject:network];
+    }
+    self.randomNetworks = [[NSMutableArray alloc] initWithArray:randomNetworks];
+}
 
 - (void)configureNavBar {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];

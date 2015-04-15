@@ -25,7 +25,7 @@
 
 - (BOOL)didUnlockAllNetworks {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL didUnlockAllNetworks = [defaults boolForKey:@"com.zacharyshaskked.iap.UnlockAllNetworks"];
+    BOOL didUnlockAllNetworks = [defaults boolForKey:@"com.zacharyshakked.iap.UnlockAllNetworks"];
     if (didUnlockAllNetworks) {
         return YES;
     } else {
@@ -115,6 +115,7 @@
 
 - (void)configureAllNetworkNames {
     _allNetworkNames = @[@"Instagram", @"Github", @"Pinterest", @"Twitter", @"Tumblr", @"Ebay", @"Dribbble", @"Behance", @"Youtube", @"GooglePlus", @"Reddit", @"Imgur", @"Wordpress", @"Gravatar", @"EtsyShop", @"EtsyPeople", @"AboutMe", @"KickAssTo", @"Flickr", @"DeviantArt", @"Twitch", @"Vimeo", @"SoundCloud", @"OkCupid", @"KickStarter",@"Blogger", @"MySpace", @"LinkedIn", @"PhotoBucket", @"Hulu", @"HubPages", @"CafeMom", @"Disqus", @"Fanpop", @"StumbleUpon", @"LastFM", @"Kongregate", @"UStream", @"Instructables", @"LiveJournal", @"Badoo", @"BitLy", @"BlipTV", @"Steam", @"Kaboodle", @"Delicious", @"SoupIO", @"Buzznet", @"Tripit", @"Fotolog", @"BlinkList", @"GogoBot", @"Flavors", @"Plancast", @"BlipFM", @"WeFollow", @"XboxGamertag", @"TripAdvisor", @"BuzzFeed", @"BandCamp", @"Beatport", @"HackerNews", @"LiveLeak", @"ImageShack", @"Alibaba", @"Scribd", @"Elance", @"Slack"];
+
 }
 
 - (instancetype)init {
